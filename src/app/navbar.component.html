@@ -1,0 +1,55 @@
+<header class="my-header" [ngClass]="{'page-scroll-header': isScrolled}"></header>
+<nav class="navbar navbar-default navbar-fixed-top default row">
+    <div class="container">
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="dropdown-content"></span>
+                </button>
+
+            <a class="navbar-brand" style="padding-left:8pc" href="#">{{projectName}}</a>
+
+        </div>
+        <div class="col-md-7 col-xs-12 col-sm-8">
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="">Home</a></li>
+                <li><a href="#">Company</a></li>
+
+
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle">Best of Month <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+
+
+                        <li><a href="#">Restaurant</a></li>
+
+
+                        <li><a href="#">Hotel</a></li>
+
+
+                        <li><a href="#">Place</a></li>
+
+
+                        <li><a href="#">Bar</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <div class="nav navbar-nav navbar" style="display:inline-block;margin-left:80%;margin-top:-60px;width:500px;">
+            <li><a href="#" style="padding-top: 5px; float:left; margin-left: 140px; position:relative; padding-bottom:1px;"> <button pButton type="button"  style="height:40px;"   background-color= "transparent" class="ui-button-secondary" label="Sign Up"></button></a></li>
+            <li><a href="#" style=" float:left;margin-left: -240px;position:relative;">Login</a></li>
+
+        </div>
+
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+    </div>
+
+</nav>

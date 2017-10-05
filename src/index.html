@@ -1,14 +1,45 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Primengcli</title>
-  <base href="/">
+<!DOCTYPE html>
+<html>
 
+<head>
+  <base href="/">
+  <title>Angular QuickStart</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="https://unpkg.com/core-js@2.4.1/client/shim.min.js"></script>
+  <script src="https://unpkg.com/zone.js/dist/zone.js"></script>
+  <script src="https://unpkg.com/zone.js/dist/long-stack-trace-zone.js"></script>
+  <script src="https://unpkg.com/reflect-metadata@0.1.3/Reflect.js"></script>
+  <script src="https://unpkg.com/systemjs@0.19.31/dist/system.js"></script>
+  <script src="config.js"></script>
+  <script>
+    System.import('app')
+      .catch(console.error.bind(console));
+  </script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Polyfill(s) for older browsers -->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+  <script src="systemjs.config.js"></script>
+  <script>
+    System.import('main.js').catch(function (err) { console.error(err); });
+  </script>
 </head>
+
 <body>
-  <app-root></app-root>
+
+
+  <my-app>Loading AppComponent content here ...</my-app>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
 </body>
+
 </html>
