@@ -1,22 +1,31 @@
 import { BrowserModule } from "@angular/platform-browser";
+import { HttpModule } from "@angular/http";
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app.routing";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/Forms";
-import { HttpModule } from "@angular/http";
 import { AgmCoreModule } from "@agm/core";
 import { AppComponent } from "./app.component";
-import { ButtonModule } from "primeng/primeng";
+import { ButtonModule, RatingModule } from "primeng/primeng";
+import "materialize-css";
+import { MaterializeModule } from "angular2-materialize";
 import { AutoCompleteModule } from "primeng/primeng";
+
 import { NavbarComponent } from "./component.navbar";
 import { BodyComponent } from "./component.body";
 import { BusinessComponent } from "./component.business";
 import { homeComponent } from "./component.home";
-import { BestComponent } from "./component.best";
+import { BestComponent } from "./Bestrestaurant/component.best";
 import { MapComponent } from "./map/map.component";
 import { CompanyComponent } from "./component.company";
-import { RatingModule } from "primeng/primeng";
-//import { FooterComponent } from "./component.footer";
+
+import { BesthotelComponent } from "./Besthotel/component.besthotel";
+import { BestplaceComponent } from "./Bestplace/component.bestplace";
+import { BestbarComponent } from "./Bestbar/component.bestbar";
+import { FooterComponent } from "./footer/component.footer";
+import { PagenotfoundComponent } from "./pagenotfound/pagenotfound.component";
+import { ProfileComponent } from "./component.profile";
+import { HttpService } from "./httpservices";
 
 @NgModule({
   declarations: [
@@ -27,21 +36,29 @@ import { RatingModule } from "primeng/primeng";
     CompanyComponent,
     BestComponent,
     homeComponent,
-    MapComponent
+    BesthotelComponent,
+    BestplaceComponent,
+    BestbarComponent,
+    MapComponent,
+    FooterComponent,
+    PagenotfoundComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule,
     ButtonModule,
     RatingModule,
+    MaterializeModule,
     AutoCompleteModule,
+
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyCXDqAJTro0We2QFN6jH3zwbFMndDMomTI"
     })
   ],
-  providers: [],
+  providers: [HttpService],
 
   bootstrap: [AppComponent]
 })

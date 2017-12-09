@@ -5,7 +5,8 @@ import { BrowserModule } from "@angular/platform-browser";
 @Component({
   moduleId: module.id,
   selector: "best",
-  templateUrl: "best.component.html"
+  templateUrl: "best.component.html",
+  styleUrls: ["bestrestaurant.css"]
 })
 export class BestComponent {
   constructor(private router: Router) {}

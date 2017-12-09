@@ -1,0 +1,54 @@
+.main-image-best {
+  background-image: url("../../image/background.jpg");
+  background-repeat: no-repeat;
+  border: 2px wheat;
+  margin-left: -400px;
+}
+.discription-best {
+  display: inline-block;
+  width: 100%;
+  display: block;
+}
+.adress-best {
+  float: left;
+  left: 1050px;
+  position: relative;
+  width: 350px;
+  height: 450px;
+  border: 2px solid gray;
+}
+.best-in-ratings {
+  border: 2px solid gray;
+  background-image: url("../../image/test1.jpg");
+  width: 270px;
+  height: 230px;
+  padding-right: 15px;
+  position: relative;
+  padding-left: 80px;
+}
+.discription1 {
+  border: 2px solid gray;
+  width: 270px;
+  height: 30px;
+  position: relative;
+  padding-left: 80px;
+  margin-top: 230px;
+}
+.type-of-Restaurant {
+  border: 2px solid gray;
+  background-image: url("../../image/test1.jpg");
+  width: 270px;
+  height: 230px;
+  margin-left: 50px;
+  position: relative;
+  padding-left: 80px;
+}
+.fine-Cusine-in-low-Budget {
+  border: 2px solid gray;
+  background-image: url("../../image/test1.jpg");
+  width: 270px;
+  height: 230px;
+  margin-left: 50px;
+  position: relative;
+  padding-left: 80px;
+}

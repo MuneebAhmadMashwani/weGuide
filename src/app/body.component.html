@@ -12,77 +12,262 @@
       <h1 class="homepage-hero_logo" id="logo">
         <a style="color:white" href="#">{{projectName}}</a>
       </h1>
+      <div col-md-12>
+        <div class="row" style="width:100%">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <h1 style="margin:0; text-align:center;position:relative;padding-bottom:5px">
+              <span class="typewriter">Find the Best Place to</span>
+              <a class="typewrite" data-period="2000" data-type='["Eat", "Drink", "Stay","Visit." ]'>
 
-      <h1 style="margin:0; text-align:center;position:relative;padding-bottom:5px">
-        <span class="typewriter">Find the Best Place to</span>
-        <a class="typewrite" data-period="2000" data-type='["Eat", "Drink", "Stay","Visit." ]'>
-      
-    <span class="wrap"></span>
-  </a>
-      </h1>
-
-
-
-    </div>
-  </div>
-
-  <div style="width:74%;float:left;margin:0 auto">
-
-
-
-
-
-    <div class="container-search-2" style="float:right">
-      <div class="pseudo-input_field-holder-place" style="padding-left:45px; border:rigid;border:none">
-        <span class="pseudo-input_field-holder-place_area">Near :      </span>
-
-        <input autocomplete="off" id="find_desc" maxlength="50" name="find_desc" placeholder="City, Area or Sector" value="" class="pseudo-input_field business-search-form_input-field"
-          aria-autocomplete="list" tabindex="1" style="padding-left:20px;position:relative;height:44px;width:200px;border:rigid;border: 0px none;">
-      </div>
-    </div>
-
-
-
-
-    <div class="search-container-main">
-      <div class="container-search-1" style="margin:0 auto">
-        <div class="pseudo-input_field-holder" style="display:inline-block; border:rigid;border:none">
-          <span class="pseudo-input_field-holder-find" style="padding-left:15px">Find :    </span>
-
-          <input autocomplete="off" id="find_desc" maxlength="64" name="find_desc" placeholder="Restaurant, Resort or Hotel" value=""
-            class="pseudo-input_field business-search-form_input-field" aria-autocomplete="list" tabindex="1" style="border-color:transparent;padding-left:20px;height:44px;padding-bottom:0px;padding-top:0px">
-
-
-
-
-
-
+                <span class="wrap"></span>
+              </a>
+            </h1>
+          </div>
+          <div class="col-md-4"></div>
         </div>
-        <div class="divider" style="float:right;right:-.5%;margin-top:2%"></div>
       </div>
     </div>
-
   </div>
+  <div class="col-sm-12">
+    <div class="row" style="width:100%">
+
+      <div class="col-sm-3"></div>
+      <div class="col-sm-3">
+
+        <div class="container-search-1" style="width:100%;float:right;right:30px">
+          <div class="pseudo-input_field-holder" style=" border:ridge;border-style:hidden">
+            <span class="pseudo-input_field-holder-find" style="padding-left:15px">Find : </span>
+
+            <!-- <input #myInput placeholder="Item name..." [(ngModel)]="name" (input)="filterItem(myInput.value)">
+           
+              <div style="background-color:blue" id="itemss" *ngFor="let item of filteredItems">
+                {{item.result.name}}
+              </div>
+             -->
+
+            <input autocomplete="off" id="find_desc" maxlength="64" name="find_desc" (click)="khuljasimsim();" placeholder="Restaurant, Resort or Hotel"
+              value="" list="dropdown" class="pseudo-input_field business-search-form_input-field" aria-autocomplete="list"
+              tabindex="1" style="display:inline-block;border-color:transparent;padding-left:20px;height:44px;padding-bottom:0px;padding-top:0px">
 
 
+            <ul style="list-style:none; width:412px; display:none" id="droppp" class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all noSidebar groupedAutocomplete headerBarSearch">
+              <a>
+                <li>
+                  <div>
+                    <span>
+                      <img style="width:3px;height:3px" src="../image/msdropdown/icons/browser-chrome.png" alt="">
+                    </span>
+                    <span>Save</span>
+                  </div>
 
-  <div search-button style="padding-top:45px">
-    <button type="submit" id="btn-search" class="glyphicon glyphicon-search" style="float:left;" (click)="btnClick(); "></button>
-  </div>
+                </li>
+              </a>
+              <li>
+                <button> Click me to check eiher jquery is working or not</button>
 
-  <div style="width:100%;padding-top:0px;">
-    <div class="panel-icons" style="width:450px;height:83px;margin:0 auto">
+              </li>
+            </ul>
 
-      <div class="inner"><button class="fa fa-cutlery" aria-hidden="true" style="border:rigid;background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Eat</button></div>
+            <!-- <datalist materialize="material_select" [materializeSelectOptions]="list" [(ngModel)]="model">
+              <option value="" data-icon="../image/msdropdown/icons/browser-chrome.png" class="left circle">example 1</option>
+
+            </datalist> -->
+            <!-- <div class="Row">
+              <div class="col-md-3"></div>
+              <div class="col-md-9">
+                <ul id="droppp" class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all noSidebar groupedAutocomplete headerBarSearch"
+                  role="listbox" aria-activedescendant="ui-active-menuitem" style="display:none; z-index: 1000001; top: -319px; left: 287px;  position: relative;">
+                  <li class="sectionLevel1 ui-menu-item" role="menuitem">
+                    <div class="sectionLevel2">
+                      <ul class="sectionItems">
+                        <li class="ui-autocomplete-element">
+                          <a>
+                            <div class="unifiedQueryComplete">
+                              <div class="autocompleteIconWrapper">
+                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_toppicks_20170920.png" alt="Top Picks">
+                              </div>
+                              <div class="autocompleteDetailsWrapper">
+                                <div class="autocompleteText">Top Picks</div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="ui-autocomplete-element">
+                          <a>
+                            <div class="unifiedQueryComplete">
+                              <div class="autocompleteIconWrapper">
+                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_trendingthismonth_20170920.png" alt="Trending">
+                              </div>
+                              <div class="autocompleteDetailsWrapper">
+                                <div class="autocompleteText">Trending</div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="ui-autocomplete-element">
+                          <a>
+                            <div class="unifiedQueryComplete">
+                              <div class="autocompleteIconWrapper">
+                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_food_20170920.png" alt="Food">
+                              </div>
+                              <div class="autocompleteDetailsWrapper">
+                                <div class="autocompleteText">Food</div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="ui-autocomplete-element">
+                          <a>
+                            <div class="unifiedQueryComplete">
+                              <div class="autocompleteIconWrapper">
+                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_coffee_20170920.png" alt="Coffee">
+                              </div>
+                              <div class="autocompleteDetailsWrapper">
+                                <div class="autocompleteText">Coffee</div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="ui-autocomplete-element">
+                          <a>
+                            <div class="unifiedQueryComplete">
+                              <div class="autocompleteIconWrapper">
+                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_drinks_20170920.png" alt="Nightlife">
+                              </div>
+                              <div class="autocompleteDetailsWrapper">
+                                <div class="autocompleteText">Nightlife</div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="ui-autocomplete-element">
+                          <a>
+                            <div class="unifiedQueryComplete">
+                              <div class="autocompleteIconWrapper">
+                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_fun_20170920.png" alt="Fun">
+                              </div>
+                              <div class="autocompleteDetailsWrapper">
+                                <div class="autocompleteText">Fun</div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="ui-autocomplete-element">
+                          <a>
+                            <div class="unifiedQueryComplete">
+                              <div class="autocompleteIconWrapper">
+                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_shopping_20170920.png" alt="Shopping">
+                              </div>
+                              <div class="autocompleteDetailsWrapper">
+                                <div class="autocompleteText">Shopping</div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="ui-autocomplete-element">
+                          <a>
+                            <div class="unifiedQueryComplete">
+                              <div class="autocompleteIconWrapper">
+                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_breakfast_20170920.png" alt="Breakfast">
+                              </div>
+                              <div class="autocompleteDetailsWrapper">
+                                <div class="autocompleteText">Breakfast</div>
+                              </div>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div> -->
+            <!--  <datalist id="dropdown" style="font-family:FontAwesome, sans-serif;">
+              <option value="0" selected> &#xf201; Chart</option>
+              <option value="fa-500px">&#xf26e; 500px</option>
+              <option class="fa fa-cutlery">&#xf05e; Blocker</option>
+            </datalist> -->
+            <!-- <select style="width:200px" class="tech" name="tech" id="tech" onchange="showValue(this)">
+              <option value="calendar" data-image="images/msdropdown/icons/icon_calendar.gif">Calendar</option>
+              <option value="shopping_cart" data-image="images/msdropdown/icons/icon_cart.gif">Shopping Cart</option>
+              <option value="cd" data-image="images/msdropdown/icons/icon_cd.gif" name="cd">CD</option>
+              <option value="email" data-image="images/msdropdown/icons/icon_email.gif">Email</option>
+              <option value="faq" data-image="images/msdropdown/icons/icon_faq.gif">FAQ</option>
+              <option value="games" data-image="images/msdropdown/icons/icon_games.gif">Games</option>
+              <option value="music" data-image="images/msdropdown/icons/icon_music.gif">Music</option>
+              <option value="phone" data-image="images/msdropdown/icons/icon_phone.gif">Phone</option>
+              <option value="graph" data-image="images/msdropdown/icons/icon_sales.gif">Graph</option>
+              <option value="secured" data-image="images/msdropdown/icons/icon_secure.gif">Secured</option>
+              <option value="video" data-image="images/msdropdown/icons/icon_video.gif">Video</option>
+              <option value="cd" data-image="images/msdropdown/icons/icon_cd.gif" name="cd">CD</option>
+            </select> -->
+
+            <!-- <div id="search-box-div">
+                <div id="search-field" class="top-div">
+                  <input #input type="text" placeholder="Filter">
+                </div>
+              </div>
+              <ul>
+                
+                <li *ngFor="let operation of places">
+                  <label>{{operation.result.name}}</label>
+                </li>
+              </ul>-->
 
 
-      <div class="inner"> <button class="fa fa-glass" aria-hidden="true" style="background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Drink</button></div>
+            <div class="divider" style="float:right;right:-.5%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="container-search-2" style="float:left; width:100%">
+          <div class="pseudo-input_field-holder-place" style="padding-left:25px;">
+            <div class="pseudo-input_field-holder-place_area" type="text" style="border:none;display:inline-block;position:relative">Near : </div>
 
-      <div class="inner"> <button class="fa fa-bed" aria-hidden="true" style="background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Stay</button></div>
+            <input autocomplete="off" id="find_desc" maxlength="50" name="find_desc" placeholder="City, Area or Sector" value="" class="pseudo-input_field business-search-form_input-field"
+              aria-autocomplete="list" tabindex="1" style="padding-left:20px;position:relative;height:44px;width:200px;border:rigid;border: 0px none;">
+          </div>
+        </div>
 
-      <div class="inner"><button class="fa fa-road" aria-hidden="true" style="background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Visit</button></div>
+      </div>
+
+      <div class="col-sm-3">
+        <div search-button style="padding-top:45px; float:left;">
+          <button type="submit" id="btn-search" class="glyphicon glyphicon-search" style="float:left;left:-15px" (click)="btnClick(); "></button>
+        </div>
+      </div>
+
 
     </div>
   </div>
+
+
+  <div class="row" style="width:100%;padding-top:0px;">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <div class="panel-icons" style="width:450px;height:83px;margin:0 auto">
+
+        <div class="inner">
+          <button class="fa fa-cutlery" aria-hidden="true" style="border:rigid;background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Eat</button>
+        </div>
+
+
+        <div class="inner">
+          <button class="fa fa-glass" aria-hidden="true" style="background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Drink</button>
+        </div>
+
+        <div class="inner">
+          <button class="fa fa-bed" aria-hidden="true" style="background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Stay</button>
+        </div>
+
+        <div class="inner">
+          <button class="fa fa-road" aria-hidden="true" style="background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Visit</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-sm-4"></div>
+  </div>
+  <business></business>
 </div>
-<business></business>

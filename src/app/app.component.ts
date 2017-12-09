@@ -6,6 +6,7 @@ import { Router } from "@angular/router";
   template: ` 
   <navbar></navbar> 
   <router-outlet></router-outlet> 
+  <my-footer></my-footer>
   `
 })
 export class AppComponent {}

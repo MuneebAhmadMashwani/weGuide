@@ -1,6 +1,35 @@
-<navbar></navbar>
-<h1>Please Work</h1>
-<agm-map style="height: 500px;" [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+<div style="margin-top:5%"></div>
+<div class="row">
+  <div class="col-sm-5" style="height:750px; overflow:scroll">
+    <div *ngFor="let place of places let i = index ">
+      <div class="row featurette" *ngIf="i < 20" style=" margin-top:10px; border:ridge 1px;border-radius:5px;width: 702px;height: 242px;margin-left: 20px;">
+        <div class="col-md-7 col-md-push-4">
+          <h2 class="featurette-heading">{{place.result.name}}</h2>
+          <p style="font-size: x-large;color: green;text-align: left;">{{place.result.formatted_address}}</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img style="width:200px;height:200px;margin-left: 0px;margin-top: 8px;" class="featurette-image img-responsive center-block"
+            data-src="holder.js/500x500/auto" alt="500x500" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=200&photoreference={{place.result.photos[0].photo_reference}}&key=AIzaSyBV_05tOiURUudZjXaiWdCxcMjkvD__fRk"
+            data-holder-rendered="true">
+          <div class="venueScore positive" title="" style=" margin-top: 5px;border:ridge 1px;border-radius:5px;width: 27px;height: 24px;text-align: center;margin-left: 70px;background-color: #73CF42;background-color: #73CF42;">
+            {{place.result.rating}}</div>
 
-</agm-map>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+  <div class="col-sm-6" style="margin-top: 10px;">
+
+    <agm-map style="height: 700px; width: 1030px;" [latitude]="33.7294" [longitude]="73.0931">
+      <div *ngFor="let place of places ; let i = index">
+        <agm-marker *ngIf="i<20" [latitude]="place.result.geometry.location.lat" [longitude]="place.result.geometry.location.lng"></agm-marker>
+      </div>
+    </agm-map>
+
+    <div class="col-sm-1"></div>
+  </div>
+</div>

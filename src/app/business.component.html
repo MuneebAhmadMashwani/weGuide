@@ -1,64 +1,56 @@
-<h1 style="text-align:center;color:black;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+<h1 style="text-align:center;color:black;margin-top:170px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
 	New and Up-Coming Business </h1>
+<div class="business-page">
+	<div class="tab-content">
 
-<div class="business-page" style="padding-top:30px;padding-bottom:40px;margin:0 auto">
+		<div class="col-sm-2"></div>
 
+		<div class="Row" *ngFor="let place of places ; let i = index">
+			<div class="col-sm-2" *ngIf="i < 3">
+				<div class="dabba-1">
+					<div class="Box">
+						<div>
 
-	<div class="row" style="display:inline-block;margin-left:225px">
+							<img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference={{place.result.photos[0].photo_reference}}&key=AIzaSyBV_05tOiURUudZjXaiWdCxcMjkvD__fRk"
+							 alt="There is no image" width="320px" height="300px" />
+						</div>
+						<div class="caption">
+							<ul>
+								<li>
+									<h3>{{place.result.formatted_phone_number}}</h3>
+								</li>
+							</ul>
 
+						</div>
+						<div class="discription">
+							<h3>{{place.result.formatted_address}} </h3>
+						</div>
 
-		<div class="Box">
-			<div class="thumbnail">
+						<div class="rating">
+							<div class="venueScore positive" title="" style="background-color: #73CF42;">
+								{{place.result.rating}}</div>
+
+							<!-- <star-rating-comp [starType]="'svg'" [rating]="2.63"></star-rating-comp> -->
+							<!-- <p-rating [(ngModel)]="val1" ngDefaultControl></p-rating> -->
+							<!-- <p-rating [ngModel]="5" readonly="true" stars="10" [cancel]="false"></p-rating> -->
+							<!-- <p-rating [(ngModel)]="val1" [cancel]="false" class="ui-state-default" ngDefaultControl>Works??</p-rating>  -->
+
+						</div>
+					</div>
+				</div>
+
 			</div>
-			<div class="caption">
-				<h3>asdfghjkl.</h3>
-			</div>
-			<div class="discription">
-				<h3>asdfghjkl.</h3>
-			</div>
-			<div class="rating">
-				<p-rating [(ngModel)]="val" [cancel]="false" class="ui-state-default"></p-rating>
-			</div>
+			<div class="col-sm-1"></div>
+
 		</div>
 
-		<div class="row" style="display:inline-block;margin-left:400px">
-
-			<div class="Box">
-				<div class="thumbnail">
 
 
-				</div>
-				<div class="caption">
-					<h3>asdfghjkl.</h3>
-				</div>
-				<div class="discription">
-					<h3>asdfghjkl.</h3>
-				</div>
-				<div class="rating">
-					<p-rating [(ngModel)]="val" [cancel]="false" class="ui-state-default"></p-rating>
-				</div>
-			</div>
+		<div class="col-sm-2"></div>
 
-			<div class="row" style="display:inline-block;margin-left:400px">
+	</div>
 
-				<div class="Box">
-					<div class="thumbnail">
-
-
-					</div>
-					<div class="caption">
-						<h3>asdfghjkl.</h3>
-					</div>
-					<div class="discription">
-						<h3>asdfghjkl.</h3>
-					</div>
-					<div class="rating">
-						<p-rating [(ngModel)]="val" [cancel]="false" class="ui-state-default"></p-rating>
-					</div>
-				</div>
-
-
-				<div class="centered" style="margin:0 auto;width:50px;margin-top:365px">
-					<button class="btn btn-primary " type="button">More</button>
-				</div>
-			</div>
+</div>
+<div class="centered" style="margin:0 auto;width:50px;margin-top:365px">
+	<button class="btn btn-primary " (click)="kuchbhi()" type="button">More</button>
+</div>

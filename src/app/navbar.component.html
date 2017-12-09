@@ -1,55 +1,83 @@
-<header class="my-header" [ngClass]="{'page-scroll-header': isScrolled}"></header>
-<nav class="navbar navbar-default navbar-fixed-top default row">
-    <div class="container">
-        <div class="navbar-header">
+<div class="nav-container" [class.fixed]="navIsFixed">
+    <nav class="navbar navbar-default navbar-fixed-top ">
+        <div class="navbar-header page-scroll">
+
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="dropdown-content"></span>
-                </button>
-
-            <a class="navbar-brand" style="padding-left:8pc" href="#">{{projectName}}</a>
-
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="dropdown-content"></span>
+            </button>
         </div>
-        <div class="col-md-7 col-xs-12 col-sm-8">
+        <div class="row" style="width:100%">
 
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="">Home</a></li>
-                <li><a href="#">Company</a></li>
+            <div class="col-md-3">
+                <a class="navbar-brand" style="padding-left:0pc" href="#">{{projectName}}</a>
+            </div>
+            <div class="col-md-7">
 
-
-                <li class="dropdown">
-                    <a data-toggle="dropdown" class="dropdown-toggle">Best of Month <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-
-
-                        <li><a href="#">Restaurant</a></li>
-
-
-                        <li><a href="#">Hotel</a></li>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="">Home</a>
+                    </li>
+                    <li>
+                        <a href="#">Company</a>
+                    </li>
 
 
-                        <li><a href="#">Place</a></li>
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle">Best of Month
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
 
 
-                        <li><a href="#">Bar</a></li>
-                    </ul>
-                </li>
-            </ul>
+                            <li>
+                                <a href="best">Restaurant</a>
+                            </li>
+
+
+                            <li>
+                                <a href="best-hotel">Hotel</a>
+                            </li>
+
+
+                            <li>
+                                <a href="best-place">Place</a>
+                            </li>
+
+
+                            <li>
+                                <a href="best-bar">Bar</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-md-2">
+                <div class="nav navbar-nav navbar" style="display:inline-block;margin-left:80%;margin-top:10px">
+
+                    <li>
+                        <a href="#" *ngIf="!loggedIn()" (click)="login()" style="margin-top:-10px; float:left;position:relative;">Login</a>
+                    </li>
+                    <li>
+                        <a href="#" *ngIf="loggedIn()" (click)="logout()" style=" margin-top:-10px; float:left;position:relative;">Logout</a>
+                    </li>
+
+                    <li>
+                        <a href="#" style="padding-top: 0px; float:left; margin-left: 110px; position:relative; padding-bottom:0px;background:transparent">
+                            <button pButton type="button" style="margin-top:-37px;height:40px;width:90px" background-color="transparent" class="ui-button-secondary"
+                                label="Sign Up"></button>
+                        </a>
+                    </li>
+
+                </div>
+
+                <div id="navbar" class="navbar-collapse collapse">
+                </div>
+            </div>
         </div>
-
-
-
-        <div class="nav navbar-nav navbar" style="display:inline-block;margin-left:80%;margin-top:-60px;width:500px;">
-            <li><a href="#" style="padding-top: 5px; float:left; margin-left: 140px; position:relative; padding-bottom:1px;"> <button pButton type="button"  style="height:40px;"   background-color= "transparent" class="ui-button-secondary" label="Sign Up"></button></a></li>
-            <li><a href="#" style=" float:left;margin-left: -240px;position:relative;">Login</a></li>
-
-        </div>
-
-    </div>
-    <div id="navbar" class="navbar-collapse collapse">
-    </div>
-
-</nav>
+    </nav>
+</div>

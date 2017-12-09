@@ -1,15 +1,17 @@
-.page-scroll-header {
-  background-color: #ccc !important;
-  opacity: 0.9;
-}
 .my-header {
   transition: background-color 2s ease-out;
+  background-color: rgb(125, 207, 125);
 }
 .navbar-default {
   color: white;
   background-color: transparent;
+  transition: background-color 2s ease-out;
   border-color: transparent;
 }
+.page-scroll {
+  background: black;
+}
+
 .navbar-default .navbar-brand {
   color: white;
   padding-top: 30px;
@@ -60,16 +62,103 @@
   font-weight: bold;
   padding-left: 25px;
 }
+/*--*/
+.navbar-brand {
+  font-size: 35px;
+  color: #fff !important;
+  padding: 0;
+  height: inherit;
+  margin: 10px 0;
+}
+.navbar > .container .navbar-brand,
+.navbar > .container-fluid .navbar-brand {
+  margin-left: 0px;
+}
+.navbar.navbar-default.navbar-fixed-top {
+  background: rgba(14, 13, 13, 0.5);
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  padding: 0.6em 14em;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  transition: 0.5s all;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #01bcfa !important;
+  text-align: center !important;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  color: rgb(15, 15, 15);
+  font-weight: normal;
+  line-height: 1.42857143;
+  white-space: nowrap;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #fff;
+  outline: 0;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #000;
+  text-decoration: none;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #11b563;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #fff;
+  background-color: transparent;
+}
+.navbar-default .navbar-nav > li > a:hover {
+  color: #fff;
+  background: rgb(152, 230, 134);
+}
+nav.navbar.navbar-default.navbar-fixed-top.top-nav-collapse {
+  padding: 1em 10em;
+  background: rgba(25, 25, 25, 0.8);
+}
+.navbar-nav > li > a {
+  padding: 10px;
+}
 
+/*--*/
 .dropdown:hover .dropdown-menu {
   display: block;
   border-radius: 5px;
-  background-color: transparent;
+  background-color: gray;
+  opacity: 0.5;
 }
 
 .nav-tabs .dropdown-menu,
 .nav-pills .dropdown-menu,
 .navbar .dropdown-menu {
+  color: whitesmoke;
   margin-top: 0;
 }
 .homepage-hero_logo {
@@ -81,7 +170,7 @@
   width: 100%;
 }
 p {
-  color: black;
+  color: whitesmoke;
   text-align: center;
   z-index: 1;
   font-size: 26px;
@@ -89,8 +178,6 @@ p {
 
 .container-search-1 {
   background-color: transparent;
-  width: 405px;
-  float: right;
   z-index: 1;
   height: 46px;
   background: white;
@@ -99,26 +186,30 @@ p {
   padding-top: 30px;
   padding-bottom: 0px;
   border: 2px white;
-  /*text-align: center;*/
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
   font-size: 20px;
   padding-top: 0px;
   padding-bottom: 0px;
 }
+.pseudo-input_field-holder-find:focus,
+input:focus {
+  outline: none;
+}
+.pseudo-input_field-holder-place_area:focus,
+input:focus {
+  outline: none;
+}
+
 .container-search-2 {
   background-color: transparent;
-  width: 380px;
-  float: right;
   z-index: 1;
   height: 46px;
   background: white;
-  display: block;
   border-radius: 5px;
   padding-top: 30px;
   padding-bottom: 0px;
   border: 2px white;
-  /*text-align: center;*/
   font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
   font-size: 20px;
@@ -131,7 +222,6 @@ p {
   font-style: normal;
   text-align: center;
   padding-top: 0px;
-  font-weight: 800;
   line-height: 0;
   background: #73cf42;
   color: white;
@@ -144,7 +234,8 @@ p {
   position: relative;
   margin: 0;
   float: right;
-  right: -14%;
+  right: -14px;
+  top: 45px;
   width: 0px;
   border: 1.5px solid black;
   height: 30px;
@@ -217,89 +308,53 @@ p {
   display: block;
   border-radius: 5px;
   border: 1px solid gray;
-  height: 349px;
+  height: 350px;
   position: absolute;
-  width: 357px;
+  width: 320px;
 }
-.thumbnail {
+.image-no-1 {
   background-image: url("../src/image/3.jpg");
   opacity: 1;
   background-repeat: no-repeat;
-  height: 60%;
+  height: 250px;
   width: 100%;
 }
+.image-no-2 {
+  background-image: url("../src/image/3.jpg");
+  opacity: 1;
+  background-repeat: no-repeat;
+  height: 250px;
+  width: 100%;
+}
+
+.image-no-3 {
+  background-image: url("../src/image/3.jpg");
+  opacity: 1;
+  background-repeat: no-repeat;
+  height: 250px;
+  width: 100%;
+}
+
 .caption {
-  padding-top: 0px;
   text-align: center;
-  font-size-adjust: 6;
-  height: 12px;
-  width: 355px;
+  font-size-adjust: 4;
+  height: 16px;
+  width: 325px;
 }
 .discription {
   padding-top: 0px;
   text-align: left;
-  width: 355px;
-  height: 60px;
+  width: 325px;
+  height: 45px;
   font-size: 10;
   background-color: black;
 }
 .rating {
-  width: 355px;
+  width: 323px;
   float: left;
   background-color: whitesmoke;
-  height: 26px;
+  height: 25px;
 }
-.main-image-best {
-  background-image: url("../src/image/background.jpg");
-  background-repeat: no-repeat;
-  border: 2px wheat;
-  margin-left: -400px;
-}
-.discription-best {
-  display: inline-block;
-  width: 100%;
-  display: block;
-}
-.adress-best {
-  float: left;
-  left: 1050px;
-  position: relative;
-  width: 350px;
-  height: 450px;
-  border: 2px solid gray;
-}
-.best-in-ratings {
-  border: 2px solid gray;
-  background-image: url("../src/image/test1.jpg");
-  width: 270px;
-  height: 230px;
-  padding-right: 15px;
-  position: relative;
-  padding-left: 80px;
-}
-.discription1 {
-  border: 2px solid gray;
-  width: 270px;
-  height: 30px;
-  position: relative;
-  padding-left: 80px;
-  margin-top: 230px;
-}
-.type-of-Restaurant {
-  border: 2px solid gray;
-  background-image: url("../src/image/test1.jpg");
-  width: 270px;
-  height: 230px;
-  margin-left: 50px;
-  position: relative;
-  padding-left: 80px;
-}
-.fine-Cusine-in-low-Budget {
-  border: 2px solid gray;
-  background-image: url("../src/image/test1.jpg");
-  width: 270px;
-  height: 230px;
-  margin-left: 50px;
-  position: relative;
-  padding-left: 80px;
-}
+/*--footer--*/
+
+/*-- //footer --*/
