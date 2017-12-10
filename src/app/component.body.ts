@@ -79,7 +79,7 @@ export class BodyComponent implements OnInit {
       this.isDeleting = false;
       alert("haan is ma b aa rha ha ye");
       $(this.el.nativeElement)
-        .find("button")
+        .find("#but")
         .on("click", function() {
           alert("Wow ye to chalta ha");
         });

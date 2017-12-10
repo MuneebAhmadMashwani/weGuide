@@ -22,13 +22,7 @@
         "../node_modules/primeng/resources/themes/omega/theme.css",
         "styles.css"
       ],
-      "scripts": [
-        "../node_modules/jquery/dist/jquery.js",
-        "../node_modules/hammerjs/hammer.js",
-        "../node_modules/materialize-css/dist/js/materialize.js",
-        "../node_modules/jquery/dist/jquery.min.js",
-        "../node_modules/jquery-ui/jquery-ui.js"
-      ],
+      "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
