@@ -11,9 +11,9 @@ import { FUNCTION_TYPE } from "@angular/compiler/src/output/output_ast";
 // import { MaterializeDirective } from "angular2-materialize";
 // import { ddslick } from "../../node_modules/ddslick/src/jquery.ddslick.js";
 //import * as $ from "ddslick";
-import * as $ from "jquery";
+// import * as $ from "jquery";
 // import "jqueryui";
-// declare var $: any;
+declare var $: any;
 
 @Component({
   moduleId: module.id,
@@ -23,37 +23,6 @@ import * as $ from "jquery";
 })
 export class BodyComponent implements OnInit {
   places = [];
-
-  // categories = [
-  //   {
-  //     text: "Facebook",
-  //     value: 1,
-  //     selected: true,
-  //     description: "Description with Facebook",
-  //     imageSrc: "http://i.imgur.com/XkuTj3B.png"
-  //   },
-  //   {
-  //     text: "Twitter",
-  //     value: 2,
-  //     selected: true,
-  //     description: "Description with Twitter",
-  //     imageSrc: "http://i.imgur.com/8ScLNnk.png"
-  //   },
-  //   {
-  //     text: "LinkedIn",
-  //     value: 3,
-  //     selected: true,
-  //     description: "Description with LinkedIn",
-  //     imageSrc: "http://i.imgur.com/aDNdibj.png"
-  //   },
-  //   {
-  //     text: "Foursquare",
-  //     value: 4,
-  //     selected: false,
-  //     description: "Description with Foursquare",
-  //     imageSrc: "http://i.imgur.com/kFAk2DX.png"
-  //   }
-  // ];
 
   constructor(
     private el: ElementRef,
