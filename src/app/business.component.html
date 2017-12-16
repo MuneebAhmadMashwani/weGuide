@@ -15,7 +15,7 @@
 							 alt="There is no image" width="320px" height="300px" />
 						</div>
 						<div class="caption">
-							<ul>
+							<ul style="list:none">
 								<li>
 									<h3>{{place.result.formatted_phone_number}}</h3>
 								</li>
@@ -26,9 +26,8 @@
 							<h3>{{place.result.formatted_address}} </h3>
 						</div>
 
-						<div class="rating">
-							<div class="venueScore positive" title="" style="background-color: #73CF42;">
-								{{place.result.rating}}</div>
+						<div class="rating" style="background-color:grey">
+							<bar-rating [(rate)]="place.result.rating" [readOnly]="true" [theme]="'fontawesome-o'"> </bar-rating>
 
 							<!-- <star-rating-comp [starType]="'svg'" [rating]="2.63"></star-rating-comp> -->
 							<!-- <p-rating [(ngModel)]="val1" ngDefaultControl></p-rating> -->

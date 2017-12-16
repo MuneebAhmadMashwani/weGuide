@@ -46,28 +46,64 @@
               </div>
              -->
 
-            <input autocomplete="off" id="find_desc" maxlength="64" name="find_desc" (click)="khuljasimsim();" placeholder="Restaurant, Resort or Hotel"
-              value="" list="dropdown" class="pseudo-input_field business-search-form_input-field" aria-autocomplete="list"
+            <input autocomplete="on" id="droppp" maxlength="64" name="find_desc" (click)="khuljasimsim();" placeholder="Restaurant, Resort or Hotel"
+              value="" list="dropdown" class="pseudo-input_field business-search-form_input-field " aria-autocomplete="list"
               tabindex="1" style="display:inline-block;border-color:transparent;padding-left:20px;height:44px;padding-bottom:0px;padding-top:0px">
+            <datalist id="dropdown">
+              <option id="listElements" *ngFor="let place of places let i = index " value="{{place.result.name}}"></option>
+
+            </datalist>
+
+            <!-- <ul style="z-index:1; list-style:none; height: 200px; width:412px; display:none" id="displaylist" class="ui-menu">
 
 
-            <ul style="list-style:none; width:412px; display:none" id="droppp" class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all noSidebar groupedAutocomplete headerBarSearch">
-              <a>
-                <li>
-                  <div>
-                    <span>
-                      <img style="width:3px;height:3px" src="../image/msdropdown/icons/browser-chrome.png" alt="">
-                    </span>
-                    <span>Save</span>
+              <li style="height:47px">
+                <div class="row">
+                  <div class="col-md-2">
+                    <img height="30px" width="30px" src="https://d30y9cdsu7xlg0.cloudfront.net/png/6564-200.png" />
                   </div>
 
-                </li>
-              </a>
-              <li>
-                <button id="but"> Click me to check eiher jquery is working or not</button>
+                  <div class="col-md-10">Restaurant</div>
+                </div>
+              </li> -->
+
+
+            <!-- <li style="height:47px">
+                <div class="row">
+                  <div class="col-md-2">
+                    <img height="30px" width="30px" src="https://d30y9cdsu7xlg0.cloudfront.net/png/6564-200.png" />
+                  </div>
+
+                  <div class="col-md-10">Hotel</div>
+                </div>
 
               </li>
-            </ul>
+
+              <li style="height:47px">
+                <div class="row">
+                  <div class="col-md-2">
+                    <img height="30px" width="30px" src="https://d30y9cdsu7xlg0.cloudfront.net/png/6564-200.png" />
+                  </div>
+
+                  <div class="col-md-10">Visit</div>
+                </div>
+              </li>
+
+              <li style="height:47px">
+
+                <div class="row">
+                  <div class="col-md-2">
+                    <img height="30px" width="30px" src="https://d30y9cdsu7xlg0.cloudfront.net/png/6564-200.png" />
+                  </div>
+
+                  <div class="col-md-10">Stay</div>
+                </div>
+
+
+              </li> -->
+
+            <!-- </ul> -->
+
 
             <!-- <datalist materialize="material_select" [materializeSelectOptions]="list" [(ngModel)]="model">
               <option value="" data-icon="../image/msdropdown/icons/browser-chrome.png" class="left circle">example 1</option>

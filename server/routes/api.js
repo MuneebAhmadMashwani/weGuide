@@ -20,14 +20,37 @@ router.post("/places", function(req, res, next) {
   res.send("");
 });
 
-//getting places from db
-router.get("/places", function(req, res, next) {
-  Places.find({}, function(err, _place) {
+router.post("/ratings", function(req, res, next) {
+  console.log(req.body);
+  var rating = new Ratings(req.body);
+  rating.save(function(err, _place) {
     if (err) {
       console.log("Error");
     } else {
-      console.log(_place);
-      res.json(_place);
+      console.log("Saved!");
+    }
+  });
+  res.send("");
+});
+
+//getting places from db
+router.get("/places", function(req, res, next) {
+  Places.find({}, function(err, _rating) {
+    if (err) {
+      console.log("Error");
+    } else {
+      console.log(_rating);
+      res.json(_rating);
+    }
+  });
+});
+router.get("/rating", function(req, res, next) {
+  Ratings.find({}, function(err, _rating) {
+    if (err) {
+      console.log("Error");
+    } else {
+      console.log(_rating);
+      res.json(_rating);
     }
   });
 });

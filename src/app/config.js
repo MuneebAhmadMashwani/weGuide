@@ -40,6 +40,9 @@ System.config({
     "@angular/router/testing":
       "npm:@angular/router/bundles/router-testing.umd.js",
     jquery: "../../node_modules/jquery/dist/jquery.js",
+    "ngx-bar-rating": "ngx-bar-rating.umd.js",
+    rateYo:
+      "https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js",
     primeng: "../../node_modules/primeng",
     rxjs: "npm:rxjs",
     jquery: "http://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js",

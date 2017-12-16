@@ -11,15 +11,17 @@ import { FUNCTION_TYPE } from "@angular/compiler/src/output/output_ast";
 // import { MaterializeDirective } from "angular2-materialize";
 // import { ddslick } from "../../node_modules/ddslick/src/jquery.ddslick.js";
 //import * as $ from "ddslick";
-// import * as $ from "jquery";
+//import * as $ from "jquery-ui";
+import * as $$ from "jquery";
 // import "jqueryui";
-declare var $: any;
+// declare var $: any;
 
 @Component({
   moduleId: module.id,
   selector: "body",
 
-  templateUrl: "body.component.html"
+  templateUrl: "body.component.html",
+  styles: ["li:hover{background-color:#5F9EA0}"]
 })
 export class BodyComponent implements OnInit {
   places = [];
@@ -46,13 +48,6 @@ export class BodyComponent implements OnInit {
       this.txt = "";
       this.tick();
       this.isDeleting = false;
-      alert("haan is ma b aa rha ha ye");
-      $(this.el.nativeElement)
-        .find("#but")
-        .on("click", function() {
-          alert("Wow ye to chalta ha");
-        });
-      //      $("#droppp").menu("blur");
     };
 
     TxtType.prototype.tick = function() {
@@ -113,9 +108,48 @@ export class BodyComponent implements OnInit {
 
   //Show Menu on clicking on Input searchbar
   khuljasimsim = function() {
-    document.getElementById("droppp").style.display = "block";
+    document.getElementById("displaylist").style.display = "block";
   };
   ngAfterViewChecked() {
+    // // var value = $$("#droppp").val();
+    // // console.log("worked ?", value);
+    // $$(this.el.nativeElement)
+    //   .find("#droppp")
+    //   .on("click", function() {
+    //     alert("Wow ye to chalta ha");
+    //   });
+    // $(this.el.nativeElement)
+    //   .find("#droppp")
+    //   .menu("blur");
+    // $(function() {
+    //   var availableTags = [
+    //     "ActionScript",
+    //     "AppleScript",
+    //     "Asp",
+    //     "BASIC",
+    //     "C",
+    //     "C++",
+    //     "Clojure",
+    //     "COBOL",
+    //     "ColdFusion",
+    //     "Erlang",
+    //     "Fortran",
+    //     "Groovy",
+    //     "Haskell",
+    //     "Java",
+    //     "JavaScript",
+    //     "Lisp",
+    //     "Perl",
+    //     "PHP",
+    //     "Python",
+    //     "Ruby",
+    //     "Scala",
+    //     "Scheme"
+    //   ];
+    //   $("#droppp").autocomplete({
+    //     source: availableTags
+    //   });
+    // });
     // $("#make-it-slick").on("click", function() {
     //   $("#demo-htmlselect").ddslick();
     // });

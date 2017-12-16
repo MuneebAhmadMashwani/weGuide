@@ -12,6 +12,58 @@
   background: black;
 }
 
+/* ngx-bar-rating */
+
+bar-rating {
+  margin: 0.5em;
+}
+.br-default .br-unit {
+  margin-right: 5px;
+  font-size: 23px;
+  height: 18px;
+  width: 18px;
+}
+.br-default .br-unit:after {
+  content: "\2605";
+  color: #d2d2d2;
+}
+.br-default .br-selected:after {
+  color: #edb867;
+}
+.br-default .br-active:after {
+  color: #edb867;
+}
+/*Fontawesome */
+.br-fontawesome-o .br-unit {
+  align-items: center;
+}
+.br-fontawesome-o .br-unit {
+  font: normal normal normal 20px/1 FontAwesome;
+  margin-right: 2px;
+}
+.br-fontawesome-o .br-unit:after {
+  content: "\f006";
+  color: #73cf42;
+}
+.br-fontawesome-o .br-selected:after {
+  content: "\f005";
+  color: #73cf42;
+}
+.br-fontawesome-o .br-active:after {
+  content: "\f005";
+  color: #73cf42;
+}
+.br-fontawesome-o .br-fraction:after {
+  content: "\f123";
+}
+
+/* ngx-bar-rating */
+/*DataList Tag*/
+
+input::-webkit-calendar-picker-indicator {
+  display: none;
+}
+/*--------------------*/
 .navbar-default .navbar-brand {
   color: white;
   padding-top: 30px;

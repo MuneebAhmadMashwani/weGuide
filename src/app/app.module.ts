@@ -7,8 +7,7 @@ import { FormsModule } from "@angular/Forms";
 import { AgmCoreModule } from "@agm/core";
 import { AppComponent } from "./app.component";
 import { ButtonModule, RatingModule } from "primeng/primeng";
-import "materialize-css";
-import { MaterializeModule } from "angular2-materialize";
+
 import { AutoCompleteModule } from "primeng/primeng";
 
 import { NavbarComponent } from "./component.navbar";
@@ -26,6 +25,9 @@ import { FooterComponent } from "./footer/component.footer";
 import { PagenotfoundComponent } from "./pagenotfound/pagenotfound.component";
 import { ProfileComponent } from "./component.profile";
 import { HttpService } from "./httpservices";
+//import * as $ from "jquery-ui";
+import * as $ from "jquery";
+import { BarRatingModule } from "ngx-bar-rating";
 
 @NgModule({
   declarations: [
@@ -51,8 +53,10 @@ import { HttpService } from "./httpservices";
     FormsModule,
     ButtonModule,
     RatingModule,
-    MaterializeModule,
+
     AutoCompleteModule,
+
+    BarRatingModule,
 
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyCXDqAJTro0We2QFN6jH3zwbFMndDMomTI"

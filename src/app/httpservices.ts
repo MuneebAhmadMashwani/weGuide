@@ -5,6 +5,7 @@ import "rxjs/add/operator/map";
 @Injectable()
 export class HttpService {
   private _url: string = "/api/places";
+  private __url: string = "/api/ratings";
   constructor(private _http: Http) {}
 
   getPlaces() {
@@ -12,4 +13,6 @@ export class HttpService {
       .get(this._url)
       .map((response: Response) => response.json());
   }
+
+  setRating() {}
 }
