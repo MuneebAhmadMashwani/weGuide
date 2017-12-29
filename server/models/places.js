@@ -2,29 +2,15 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var placeSchema = new Schema({
-  name: {
-    type: String,
-    default: ""
+  result: {
+    type: Array
   },
-  image: {
-    type: String,
-    default: ""
+  html_attributions: {
+    type: Array
   },
-  latitude: {
-    type: String,
-    default: ""
-  },
-  longitude: {
-    type: String,
-    default: ""
-  },
-  category: {
-    type: String,
-    default: ""
-  },
-  rating: {
-    type: Number,
-    default: 0
+
+  status: {
+    type: String
   }
 });
 module.exports = mongoose.model("Places", placeSchema);

@@ -6,17 +6,16 @@ var ratingSchema = new Schema({
     type: String,
     default: ""
   },
-  place_id: {
-    type: String,
-    default: ""
-  },
-  types: {
-    type: String,
-    default: ""
-  },
   rating: {
     type: Number,
     default: 0
+  },
+  types: {
+    type: Array
+  },
+  place_id: {
+    type: String,
+    default: ""
   }
 });
 module.exports = mongoose.model("Ratings", ratingSchema);

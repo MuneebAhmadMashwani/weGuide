@@ -55,7 +55,7 @@ import { BarRatingModule } from "ngx-bar-rating";
     RatingModule,
 
     AutoCompleteModule,
-
+    RouterModule,
     BarRatingModule,
 
     AgmCoreModule.forRoot({

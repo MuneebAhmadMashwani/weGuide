@@ -1,32 +1,29 @@
 <navbar style="background-color:rgb(125, 151, 124)"></navbar>
-<div class="header-best" style="margin:0 auto;display:table;position:relative">
-    <div class="text-best">
-        <h1 style="padding-top:75px;text-align:center;">Best Resturent of Month in your City</h1>
-    </div>
 
-    <div class="best-of-month-with-address" style="padding-top:23px;height:475px">
-        <div class="main-image-best" style='width:960px; height:450px'>
+<div *ngFor="let item of places let i=index;">
 
-            <div class="adress-best"></div>
+    <div *ngIf="item.result[0].reviews?.length>4 && item.result[0].rating>4.5 && item.result[0].types?.length>6">
+
+        <div class="header-best" style="margin:100px auto;display:table;position:relative">
+            <div>
+                <h1>Best Place: "{{item.result[0].name}}"</h1>
+            </div>
         </div>
-    </div>
-
-
-    <div class="centered" style="position:relative;">
-        <div class="container" style="padding-top:50px;display:-webkit-inline-flex;width:2000px;margin-left:-200px">
-            <div class="best-in-ratings"></div>
-
-            <div class="type-of-Restaurant"></div>
-
-            <div class="fine-Cusine-in-low-Budget"></div>
+        <div class="row"></div>
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+            <img style="height:600px" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference={{item.result[0].photos[0].photo_reference}}&key=AIzaSyBV_05tOiURUudZjXaiWdCxcMjkvD__fRk"
+                alt="empty">
         </div>
 
-
-        <div class="container" style="padding-top:50px;display:-webkit-inline-flex;width:2000px;margin-left:-200px">
-            <div class="discription1">a</div>
-            <div class="discription1" style="margin-left: 50px;">b</div>
-            <div class="discription1" style="margin-left: 50px;">c</div>
+        <div class="col-md-3" style="border:ridge; Height:600px">
+            <div>
+                <h1 style="text-align:center">{{item.result[0].name}}</h1>
+            </div>
 
         </div>
+        <div class="col-md-1"></div>
+
+
     </div>
 </div>
