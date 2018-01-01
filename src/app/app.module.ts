@@ -17,6 +17,7 @@ import { homeComponent } from "./component.home";
 import { BestComponent } from "./Bestrestaurant/component.best";
 import { MapComponent } from "./map/map.component";
 import { CompanyComponent } from "./component.company";
+import { NearbyComponent } from "./NearbyPlaces/nearby.component";
 
 import { BesthotelComponent } from "./Besthotel/component.besthotel";
 import { BestplaceComponent } from "./Bestplace/component.bestplace";
@@ -44,7 +45,8 @@ import { BarRatingModule } from "ngx-bar-rating";
     MapComponent,
     FooterComponent,
     PagenotfoundComponent,
-    ProfileComponent
+    ProfileComponent,
+    NearbyComponent
   ],
   imports: [
     BrowserModule,

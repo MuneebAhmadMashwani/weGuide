@@ -95,6 +95,18 @@ router.post("/ratings", function(req, res, next) {
     }
   });
 });
+////////////////////////////////////////////////////////
+router.post("/search", function(req, res, next) {
+  console.log(req.body);
+  Places.find({ "result.name": req.body._find }, function(err, place) {
+    if (err) {
+      console.log("Error Searching", err);
+    } else {
+      console.log("Searched", place);
+      res.json(place);
+    }
+  });
+});
 
 //getting places from db
 router.get("/places", function(req, res, next) {

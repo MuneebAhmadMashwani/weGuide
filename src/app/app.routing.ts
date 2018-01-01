@@ -13,6 +13,7 @@ import { BestplaceComponent } from "./Bestplace/component.bestplace";
 import { PagenotfoundComponent } from "./pagenotfound/pagenotfound.component";
 import { BestbarComponent } from "./Bestbar/component.bestbar";
 import { ProfileComponent } from "./component.profile";
+import { NearbyComponent } from "./NearbyPlaces/nearby.component";
 
 export const routes: Routes = [
   {
@@ -52,6 +53,10 @@ export const routes: Routes = [
   {
     path: "profile",
     component: ProfileComponent
+  },
+  {
+    path: "nearby",
+    component: NearbyComponent
   }
 ];
 

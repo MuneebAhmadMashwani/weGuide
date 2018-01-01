@@ -30,31 +30,32 @@
     </div>
   </div>
   <div class="col-sm-12">
-    <div class="row" style="width:100%">
+    <form>
+      <div class="row" style="width:100%">
 
-      <div class="col-sm-3"></div>
-      <div class="col-sm-3">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-3">
 
-        <div class="container-search-1" style="width:100%;float:right;right:30px">
-          <div class="pseudo-input_field-holder" style=" border:ridge;border-style:hidden">
-            <span class="pseudo-input_field-holder-find" style="padding-left:15px">Find : </span>
+          <div class="container-search-1" style="width:100%;float:right;right:30px">
+            <div class="pseudo-input_field-holder" style=" border:ridge;border-style:hidden">
+              <span class="pseudo-input_field-holder-find" style="padding-left:15px">Find : </span>
 
-            <!-- <input #myInput placeholder="Item name..." [(ngModel)]="name" (input)="filterItem(myInput.value)">
+              <!-- <input #myInput placeholder="Item name..." [(ngModel)]="name" (input)="filterItem(myInput.value)">
            
               <div style="background-color:blue" id="itemss" *ngFor="let item of filteredItems">
                 {{item.result.name}}
               </div>
              -->
 
-            <input autocomplete="on" id="droppp" maxlength="64" name="find_desc" (click)="khuljasimsim();" placeholder="Restaurant, Resort or Hotel"
-              value="" list="dropdown" class="pseudo-input_field business-search-form_input-field " aria-autocomplete="list"
-              tabindex="1" style="display:inline-block;border-color:transparent;padding-left:20px;height:44px;padding-bottom:0px;padding-top:0px">
-            <datalist id="dropdown">
-              <option id="listElements" *ngFor="let place of places let i = index " value="{{place.result.name}}"></option>
+              <input autocomplete="on" id="droppp" maxlength="64" name="find_desc" (click)="khuljasimsim();" placeholder="Restaurant, Resort or Hotel"
+                value="" list="dropdown" [(ngModel)]="_find" class="pseudo-input_field business-search-form_input-field " aria-autocomplete="list"
+                tabindex="1" style="display:inline-block;border-color:transparent;padding-left:20px;height:44px;padding-bottom:0px;padding-top:0px">
+              <datalist id="dropdown">
+                <option id="listElements" *ngFor="let place of places let i = index " value="{{place.result.name}}"></option>
 
-            </datalist>
+              </datalist>
 
-            <!-- <ul style="z-index:1; list-style:none; height: 200px; width:412px; display:none" id="displaylist" class="ui-menu">
+              <!-- <ul style="z-index:1; list-style:none; height: 200px; width:412px; display:none" id="displaylist" class="ui-menu">
 
 
               <li style="height:47px">
@@ -68,7 +69,7 @@
               </li> -->
 
 
-            <!-- <li style="height:47px">
+              <!-- <li style="height:47px">
                 <div class="row">
                   <div class="col-md-2">
                     <img height="30px" width="30px" src="https://d30y9cdsu7xlg0.cloudfront.net/png/6564-200.png" />
@@ -102,14 +103,14 @@
 
               </li> -->
 
-            <!-- </ul> -->
+              <!-- </ul> -->
 
 
-            <!-- <datalist materialize="material_select" [materializeSelectOptions]="list" [(ngModel)]="model">
+              <!-- <datalist materialize="material_select" [materializeSelectOptions]="list" [(ngModel)]="model">
               <option value="" data-icon="../image/msdropdown/icons/browser-chrome.png" class="left circle">example 1</option>
 
             </datalist> -->
-            <!-- <div class="Row">
+              <!-- <div class="Row">
               <div class="col-md-3"></div>
               <div class="col-md-9">
                 <ul id="droppp" class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all noSidebar groupedAutocomplete headerBarSearch"
@@ -219,12 +220,12 @@
                 </ul>
               </div>
             </div> -->
-            <!--  <datalist id="dropdown" style="font-family:FontAwesome, sans-serif;">
+              <!--  <datalist id="dropdown" style="font-family:FontAwesome, sans-serif;">
               <option value="0" selected> &#xf201; Chart</option>
               <option value="fa-500px">&#xf26e; 500px</option>
               <option class="fa fa-cutlery">&#xf05e; Blocker</option>
             </datalist> -->
-            <!-- <select style="width:200px" class="tech" name="tech" id="tech" onchange="showValue(this)">
+              <!-- <select style="width:200px" class="tech" name="tech" id="tech" onchange="showValue(this)">
               <option value="calendar" data-image="images/msdropdown/icons/icon_calendar.gif">Calendar</option>
               <option value="shopping_cart" data-image="images/msdropdown/icons/icon_cart.gif">Shopping Cart</option>
               <option value="cd" data-image="images/msdropdown/icons/icon_cd.gif" name="cd">CD</option>
@@ -239,7 +240,7 @@
               <option value="cd" data-image="images/msdropdown/icons/icon_cd.gif" name="cd">CD</option>
             </select> -->
 
-            <!-- <div id="search-box-div">
+              <!-- <div id="search-box-div">
                 <div id="search-field" class="top-div">
                   <input #input type="text" placeholder="Filter">
                 </div>
@@ -252,30 +253,32 @@
               </ul>-->
 
 
-            <div class="divider" style="float:right;right:-.5%;"></div>
+              <div class="divider" style="float:right;right:-.5%;"></div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-sm-3">
-        <div class="container-search-2" style="float:left; width:100%">
-          <div class="pseudo-input_field-holder-place" style="padding-left:25px;">
-            <div class="pseudo-input_field-holder-place_area" type="text" style="border:none;display:inline-block;position:relative">Near : </div>
+        <div class="col-sm-3">
+          <div class="container-search-2" style="float:left; width:100%">
+            <div class="pseudo-input_field-holder-place" style="padding-left:25px;">
+              <div class="pseudo-input_field-holder-place_area" type="text" style="border:none;display:inline-block;position:relative">Near : </div>
 
-            <input autocomplete="off" id="find_desc" maxlength="50" name="find_desc" placeholder="City, Area or Sector" value="" class="pseudo-input_field business-search-form_input-field"
-              aria-autocomplete="list" tabindex="1" style="padding-left:20px;position:relative;height:44px;width:200px;border:rigid;border: 0px none;">
+              <input autocomplete="off" id="find_desc" maxlength="50" name="find_desc" placeholder="City, Area or Sector" value="" class="pseudo-input_field business-search-form_input-field"
+                aria-autocomplete="list" tabindex="1" style="padding-left:20px;position:relative;height:44px;width:200px;border:rigid;border: 0px none;">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-sm-3">
+          <div search-button style="padding-top:45px; float:left;">
+            <button type="submit" id="btn-search" class="glyphicon glyphicon-search" (click)="btnSearch();" style="float:left;left:-15px"></button>
           </div>
         </div>
 
+
+
       </div>
-
-      <div class="col-sm-3">
-        <div search-button style="padding-top:45px; float:left;">
-          <button type="submit" id="btn-search" class="glyphicon glyphicon-search" style="float:left;left:-15px" (click)="btnClick(); "></button>
-        </div>
-      </div>
-
-
-    </div>
+    </form>
   </div>
 
 
@@ -285,7 +288,7 @@
       <div class="panel-icons" style="width:450px;height:83px;margin:0 auto">
 
         <div class="inner">
-          <button class="fa fa-cutlery" aria-hidden="true" style="border:rigid;background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Eat</button>
+          <button (click)="getLocation()" class="fa fa-cutlery" aria-hidden="true" style="border:rigid;background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Eat</button>
         </div>
 
 

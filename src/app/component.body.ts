@@ -6,7 +6,10 @@ import { Router } from "@angular/router";
 import { Http, Response, Headers, RequestOptions } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import { HttpService } from "./httpservices";
-import { FUNCTION_TYPE } from "@angular/compiler/src/output/output_ast";
+import {
+  FUNCTION_TYPE,
+  NULL_EXPR
+} from "@angular/compiler/src/output/output_ast";
 // import "materialize-css";
 // import { MaterializeDirective } from "angular2-materialize";
 // import { ddslick } from "../../node_modules/ddslick/src/jquery.ddslick.js";
@@ -25,7 +28,7 @@ import * as $$ from "jquery";
 })
 export class BodyComponent implements OnInit {
   places = [];
-
+  _find: string;
   constructor(
     private el: ElementRef,
     private _httpService: HttpService,
@@ -101,78 +104,46 @@ export class BodyComponent implements OnInit {
   }
 
   private projectName: string;
-
-  btnClick = function() {
-    this.router.navigateByUrl("/map");
+  camelize = function toTitleCase(str) {
+    console.log("ssa", str);
+    if (str) {
+      return str.replace(/\w\S*/g, function(txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
+    }
   };
+
+  //////////////////////////////////////////////////////
+  btnSearch = function() {
+    var find = {
+      _find: "empty"
+    };
+    var _find = {
+      _find: this.camelize(this._find)
+    };
+
+    this._httpService.btnSearch(_find).subscribe(resSearch => {
+      console.log("resSearch", resSearch._body);
+      if (this._find) {
+        this.router.navigate(["/map", { mySearch: resSearch._body }]);
+        console.log("IF");
+      } else {
+        this.router.navigate(["/map", { mySearch: "empty" }]);
+        console.log("ELSE");
+      }
+    });
+
+    // this.router.navigateByUrl("/map");
+  };
+
+  //////////////////////////////////////////////////////////
+  getLocation() {
+    this.router.navigate(["/nearby", { nearby: "restaurant" }]);
+  }
 
   //Show Menu on clicking on Input searchbar
   khuljasimsim = function() {
-    document.getElementById("displaylist").style.display = "block";
+    // document.getElementById("displaylist").style.display = "block";
   };
-  ngAfterViewChecked() {
-    // // var value = $$("#droppp").val();
-    // // console.log("worked ?", value);
-    // $$(this.el.nativeElement)
-    //   .find("#droppp")
-    //   .on("click", function() {
-    //     alert("Wow ye to chalta ha");
-    //   });
-    // $(this.el.nativeElement)
-    //   .find("#droppp")
-    //   .menu("blur");
-    // $(function() {
-    //   var availableTags = [
-    //     "ActionScript",
-    //     "AppleScript",
-    //     "Asp",
-    //     "BASIC",
-    //     "C",
-    //     "C++",
-    //     "Clojure",
-    //     "COBOL",
-    //     "ColdFusion",
-    //     "Erlang",
-    //     "Fortran",
-    //     "Groovy",
-    //     "Haskell",
-    //     "Java",
-    //     "JavaScript",
-    //     "Lisp",
-    //     "Perl",
-    //     "PHP",
-    //     "Python",
-    //     "Ruby",
-    //     "Scala",
-    //     "Scheme"
-    //   ];
-    //   $("#droppp").autocomplete({
-    //     source: availableTags
-    //   });
-    // });
-    // $("#make-it-slick").on("click", function() {
-    //   $("#demo-htmlselect").ddslick();
-    // });
-    // $("#demo-htmlselect").ddslick({
-    //   data: this.categories,
-    //   imagePosition: "left",
-    //   selectText: "Select your favorite social network",
-    //   onSelected: function(data) {
-    //     console.log(data);
-    //   }
-    // });
-  }
-  // filteredItems = [];
-  // assignCopy = function() {
-  //   this.filteredItems = Object.assign([], this.places);
-  // };
-
-  // filterItem(value) {
-  //   console.log("filterItems", this.filteredItems);
-  //   if (!value) this.assignCopy(); //when nothing has typed
-  //   this.filteredItems = Object.assign([], this.places).filter(
-  //     place => place.result.name.toLowerCase().indexOf(value.toLowerCase()) > -1
-  //   );
-  //   console.log("ye", this.filteredItems);
-  // }
+  ngAfterViewChecked() {}
 }

@@ -33,6 +33,28 @@ export class HttpService {
       .post("http://localhost:3000/api/reviews", _reviews)
       .map(res => res.json);
   }
+
+  btnSearch(_find) {
+    return this._http
+      .post("http://localhost:3000/api/search", _find)
+      .map(res => res);
+  }
+
+  getNearbyPlaces(_nearby) {
+    return this._http
+      .get(
+        "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" +
+          _nearby.latitude +
+          "," +
+          _nearby.longitude +
+          "&radius=100&type=" +
+          _nearby.nearby +
+          "&keyword=cruise&key=AIzaSyBV_05tOiURUudZjXaiWdCxcMjkvD__fRk",
+        _nearby
+      )
+      .map(res => res);
+  }
+
   // postReviews(_reviews) {
   //   return this._http
   //     .get("http://localhost:3000/api/places")

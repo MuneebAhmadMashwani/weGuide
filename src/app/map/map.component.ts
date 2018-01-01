@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, AfterViewInit } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { Observable } from "rxjs/Observable";
 import { HttpService } from "../httpservices";
 import * as $ from "jquery";
@@ -15,13 +15,15 @@ export class MapComponent implements OnInit, AfterViewInit {
   places = [];
   rating = [];
   review: string;
+  mySearch: any;
 
   modalData: any;
 
   faoRating = 1;
   constructor(
     private _httpService: HttpService,
-    private _elementRef: ElementRef
+    private _elementRef: ElementRef,
+    private route: ActivatedRoute
   ) {}
 
   ngAfterViewInit() {
@@ -32,16 +34,25 @@ export class MapComponent implements OnInit, AfterViewInit {
     // this.places.sort();
   }
   ngOnInit() {
-    this._httpService.getPlaces().subscribe(
-      data => {
-        this.places = data;
-        console.log("Login successful");
-        console.log(this.places);
-      },
-      err => {
-        console.log("Something went wrong! Login not successful");
+    console.log("this.mysearch", this.mySearch);
+
+    this.route.params.subscribe(data => {
+      if (data.mySearch != "empty") {
+        this.places = JSON.parse(data.mySearch);
+      } else {
+        this._httpService.getPlaces().subscribe(
+          data => {
+            this.places = data;
+            console.log("Login successful");
+            console.log(this.places);
+          },
+          err => {
+            console.log("Something went wrong! Login not successful");
+          }
+        );
       }
-    );
+    });
+    console.log("dekho", this.places);
   }
   setRating(place, event) {
     // event.preventDefault();
