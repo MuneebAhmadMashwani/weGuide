@@ -26,9 +26,10 @@ import { FooterComponent } from "./footer/component.footer";
 import { PagenotfoundComponent } from "./pagenotfound/pagenotfound.component";
 import { ProfileComponent } from "./component.profile";
 import { HttpService } from "./httpservices";
-//import * as $ from "jquery-ui";
+
 import * as $ from "jquery";
 import { BarRatingModule } from "ngx-bar-rating";
+import { AddPlaceComponent } from "./add-place/add-place.component";
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { BarRatingModule } from "ngx-bar-rating";
     FooterComponent,
     PagenotfoundComponent,
     ProfileComponent,
-    NearbyComponent
+    NearbyComponent,
+    AddPlaceComponent
   ],
   imports: [
     BrowserModule,

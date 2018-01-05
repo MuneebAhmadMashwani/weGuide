@@ -10,14 +10,9 @@ import {
   FUNCTION_TYPE,
   NULL_EXPR
 } from "@angular/compiler/src/output/output_ast";
-// import "materialize-css";
-// import { MaterializeDirective } from "angular2-materialize";
-// import { ddslick } from "../../node_modules/ddslick/src/jquery.ddslick.js";
-//import * as $ from "ddslick";
-//import * as $ from "jquery-ui";
+
 import * as $$ from "jquery";
-// import "jqueryui";
-// declare var $: any;
+import { concat } from "rxjs/operators/concat";
 
 @Component({
   moduleId: module.id,
@@ -29,6 +24,7 @@ import * as $$ from "jquery";
 export class BodyComponent implements OnInit {
   places = [];
   _find: string;
+
   constructor(
     private el: ElementRef,
     private _httpService: HttpService,
@@ -125,15 +121,14 @@ export class BodyComponent implements OnInit {
     this._httpService.btnSearch(_find).subscribe(resSearch => {
       console.log("resSearch", resSearch._body);
       if (this._find) {
+        console.log("Empty");
+
         this.router.navigate(["/map", { mySearch: resSearch._body }]);
-        console.log("IF");
       } else {
         this.router.navigate(["/map", { mySearch: "empty" }]);
-        console.log("ELSE");
+        console.log("User hasn't typed anything");
       }
     });
-
-    // this.router.navigateByUrl("/map");
   };
 
   //////////////////////////////////////////////////////////

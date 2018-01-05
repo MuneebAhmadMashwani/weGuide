@@ -5,6 +5,8 @@ import { HttpService } from "../httpservices";
 import * as $ from "jquery";
 //import * as $$ from "rateyo/src/jquery.rateyo";
 import { Element } from "@angular/compiler";
+import { empty } from "rxjs/Observer";
+import { concat } from "rxjs/operators/concat";
 
 @Component({
   selector: "map",
@@ -23,7 +25,8 @@ export class MapComponent implements OnInit, AfterViewInit {
   constructor(
     private _httpService: HttpService,
     private _elementRef: ElementRef,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngAfterViewInit() {
@@ -34,17 +37,18 @@ export class MapComponent implements OnInit, AfterViewInit {
     // this.places.sort();
   }
   ngOnInit() {
-    console.log("this.mysearch", this.mySearch);
-
     this.route.params.subscribe(data => {
       if (data.mySearch != "empty") {
         this.places = JSON.parse(data.mySearch);
+
+        if (!this.mySearch) {
+          this.router.navigate([""]);
+        }
       } else {
         this._httpService.getPlaces().subscribe(
           data => {
             this.places = data;
             console.log("Login successful");
-            console.log(this.places);
           },
           err => {
             console.log("Something went wrong! Login not successful");
@@ -52,11 +56,8 @@ export class MapComponent implements OnInit, AfterViewInit {
         );
       }
     });
-    console.log("dekho", this.places);
   }
   setRating(place, event) {
-    // event.preventDefault();
-    //event.stopImmediatePropagation();
     console.log(event);
     console.log("place", place.types);
     var email = JSON.parse(localStorage.getItem("profile")).email;

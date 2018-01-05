@@ -15,19 +15,19 @@
 							 alt="There is no image" width="320px" height="300px" />
 						</div>
 						<div class="caption">
-							<ul style="list:none">
-								<li>
-									<h3>{{place.result[0].formatted_phone_number}}</h3>
-								</li>
-							</ul>
+
+							<h3>{{place.result[0].name}}</h3>
+
+
 
 						</div>
 						<div class="discription">
-							<h3>{{place.result[0].formatted_address}} </h3>
+							<h4 style="color:lightgrey">{{place.result[0].formatted_address}} </h4>
 						</div>
 
 						<div class="rating" style="background-color:grey">
-							<bar-rating [(rate)]="place.result[0].rating" [readOnly]="true" [theme]="'fontawesome-o'"> </bar-rating>
+							<bar-rating [(rate)]="place.result[0].rating" [readOnly]="true" [theme]="'fontawesome-o'">
+							</bar-rating>
 
 							<!-- <star-rating-comp [starType]="'svg'" [rating]="2.63"></star-rating-comp> -->
 							<!-- <p-rating [(ngModel)]="val1" ngDefaultControl></p-rating> -->
