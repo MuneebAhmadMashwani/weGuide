@@ -1,0 +1,143 @@
+<h1 style="text-align:center;color:black;margin-top:90px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+	New and Up-Coming Business in your City </h1>
+<div class="business-page" style="margin-top:50px;margin-bottom:400px">
+	<div class="tab-content">
+
+		<div class="col-sm-2"></div>
+
+		<div class="Row" *ngFor="let place of places |slice:4:7 ; let i = index">
+			<div class="col-sm-2">
+				<div class="dabba-1">
+					<div class="Box">
+						<div>
+
+							<img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference={{place.result[0].photos[0].photo_reference}}&key=AIzaSyBV_05tOiURUudZjXaiWdCxcMjkvD__fRk"
+							 alt="There is no image" width="320px" height="300px" />
+						</div>
+						<div class="caption">
+							<ul style="list:none">
+
+								<h3 style="margin-top:-3px;padding-bottom:5px">{{place.result[0].name}}</h3>
+
+							</ul>
+
+						</div>
+						<div class="discription" style="margin-top:15px">
+							<p style="font-size:15px">{{place.result[0].formatted_address}} </p>
+						</div>
+
+						<div class="rating" style="background-color:grey">
+							<bar-rating [(rate)]="place.result[0].rating" [readOnly]="true" [theme]="'fontawesome-o'"> </bar-rating>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-sm-1"></div>
+
+		</div>
+
+
+
+		<div class="col-sm-2"></div>
+
+	</div>
+
+
+</div>
+<div>
+
+</div>
+<div class="business-page" style="margin-top:50px;margin-bottom:400px">
+	<div class="tab-content">
+
+		<div class="col-sm-2"></div>
+
+		<div class="Row" *ngFor="let place of places |slice:8:11 ; let i = index">
+			<div class="col-sm-2">
+				<div class="dabba-1">
+					<div class="Box">
+						<div>
+
+							<img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference={{place.result[0].photos[0].photo_reference}}&key=AIzaSyBV_05tOiURUudZjXaiWdCxcMjkvD__fRk"
+							 alt="There is no image" width="320px" height="300px" />
+						</div>
+						<div class="caption">
+							<ul style="list:none">
+
+								<h3 style="margin-top:-3px;padding-bottom:5px">{{place.result[0].name}}</h3>
+
+							</ul>
+
+						</div>
+						<div class="discription" style="margin-top:15px">
+							<p style="font-size:15px">{{place.result[0].formatted_address}} </p>
+						</div>
+
+						<div class="rating" style="background-color:grey">
+							<bar-rating [(rate)]="place.result[0].rating" [readOnly]="true" [theme]="'fontawesome-o'"> </bar-rating>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-sm-1"></div>
+
+		</div>
+
+
+
+		<div class="col-sm-2"></div>
+
+	</div>
+
+
+</div>
+<div class="business-page" style="margin-top:50px;margin-bottom:400px">
+	<div class="tab-content">
+
+		<div class="col-sm-2"></div>
+
+		<div class="Row" *ngFor="let place of places |slice:12:15 ; let i = index">
+			<div class="col-sm-2">
+				<div class="dabba-1">
+					<div class="Box">
+						<div>
+
+							<img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference={{place.result[0].photos[0].photo_reference}}&key=AIzaSyBV_05tOiURUudZjXaiWdCxcMjkvD__fRk"
+							 alt="There is no image" width="320px" height="300px" />
+						</div>
+						<div class="caption">
+							<ul style="list:none">
+
+								<h3 style="margin-top:-3px;padding-bottom:5px">{{place.result[0].name}}</h3>
+
+							</ul>
+
+						</div>
+						<div class="discription" style="margin-top:15px">
+							<p style="font-size:15px">{{place.result[0].formatted_address}} </p>
+						</div>
+
+						<div class="rating" style="background-color:grey">
+							<bar-rating [(rate)]="place.result[0].rating" [readOnly]="true" [theme]="'fontawesome-o'"> </bar-rating>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-sm-1"></div>
+
+		</div>
+
+
+
+		<div class="col-sm-2"></div>
+
+	</div>
+
+
+</div>

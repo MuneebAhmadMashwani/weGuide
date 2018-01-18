@@ -192,6 +192,7 @@
     <agm-map style="height: 700px; width: 1030px;" [latitude]="33.7294" [longitude]="73.0931">
       <div *ngFor="let place of places ; let i = index">
         <agm-marker [latitude]="place.result[0].geometry.location.lat " [longitude]="place.result[0].geometry.location.lng "></agm-marker>
+        <agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="place.result[0].geometry.location"></agm-direction>
       </div>
     </agm-map>
 

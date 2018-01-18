@@ -1,0 +1,201 @@
+<div style="margin-top:5%">
+</div>
+<div class="row">
+  <div class="col-sm-5" style="height:750px; overflow:scroll">
+
+    <div class="container">
+
+      <!-- Trigger the modal with a button -->
+      <!-- <button type="button" style="margin-top:1%;margin-left:35%" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Place</button> -->
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+
+
+        <!-- Modal content-->
+
+
+
+
+
+        <div class="row main">
+          <div class="main-login main-center">
+            <div style="border-bottom:solid 1px #009edf54" class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+            <form class="" method="post" action="#">
+
+              <div class="form-group">
+                <label for="name" class="cols-sm-2 control-label">Your Name</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-user fa" aria-hidden="true"></i>
+                    </span>
+                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter your Name" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-envelope fa" aria-hidden="true"></i>
+                    </span>
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="username" class="cols-sm-2 control-label">Username</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-users fa" aria-hidden="true"></i>
+                    </span>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Enter your Username" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="password" class="cols-sm-2 control-label">Password</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+                    </span>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
+                    </span>
+                    <input type="password" class="form-control" name="confirm" id="confirm" placeholder="Confirm your Password" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group ">
+                <a data-dismiss="modal" target="_blank" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+      </div>
+
+    </div>
+
+    <div *ngFor="let place of parks let i = index ">
+      <div class="row featurette" *ngIf="i < 20" style=" margin-top:10px; border:ridge 1px;border-radius:5px;width: 702px;height: 242px;margin-left: 20px;">
+        <div class="col-md-7 col-md-push-4">
+          <h2 class="featurette-heading">{{place.result[0].name?place.result[0].name : 'null'}}</h2>
+          <p style="font-size: large;color: #73cf42;text-align: left;">{{place.result[0].formatted_address?place.result[0].formatted_address : 'null'}}</p>
+          <!-- <bar-rating [(rate)]="faRate" [max]="5" [theme]="'default'">dnjkg</bar-rating>
+          ;cljkhvkjdbvjhbhjv -->
+          <!-- <star-rating-comp [starType]="'svg'" [rating]="2" [labelText]="'My text!'"></star-rating-comp> -->
+
+
+          <bar-rating class="col-md-7 col-md-push-7" *ngIf="!loggedIn()" [(rate)]="place.result[0].rating" [readOnly]="true" [theme]="'fontawesome-o'"
+            style="margin-top: 0px;margin-bottom: 0px;">
+          </bar-rating>
+
+          <bar-rating class="col-md-7 col-md-push-7" *ngIf="loggedIn()" [rate]="place.result[0].rating" (rateChange)="setRating(place.result[0],$event)"
+            [max]="5" [theme]="'fontawesome-o'" style="margin-top: 0px;margin-bottom: 0px;" ngDefaultControl></bar-rating>
+
+
+
+          <div class="col-md-7 col-md-push-7" style="margin-top: 14px;margin-bottom: 21px;">
+            <div class="container">
+
+              <!-- *ngFor="let item of place.result[0].reviews let ii=index" -->
+              <!-- Trigger the modal with a button -->
+              <button type="button" (click)="openModal(place.result[0].reviews?place.result[0].reviews : 'null')" data-toggle="modal" data-target="#reviews"
+                class="btn btn-info btn-lg">Open Reviews</button>
+
+              <!-- Modal -->
+
+              <div>
+                <div>
+
+                  <div class="modal fade" id="reviews" role="dialog">
+                    <div class="modal-dialog">
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Reviews</h4>
+                        </div>
+                        <div class="modal-body">
+                          <div *ngFor="let item of modalData">
+                            <p style="color: black;text-align: center; z-index: 1; border-radius: 2; font-size: 20px; border: ridge;">{{item.text}}</p>
+                            <br>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <!-- <input type="text" id="review" [(ngModel)]="review">
+                          <button (click)="postReviews(place)">Save</button> -->
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img style="width:200px;height:200px;margin-left: 0px;margin-top: 8px;" class="featurette-image img-responsive center-block"
+            data-src="holder.js/500x500/auto" alt="500x500" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference={{place.result[0].photos[0].photo_reference}}&key=AIzaSyBV_05tOiURUudZjXaiWdCxcMjkvD__fRk?:'../../image/1.jpg'"
+            data-holder-rendered="true">
+          <div class="venueScore positive" title="" style=" margin-top: 5px;border:ridge 1px;border-radius:5px;width: 27px;height: 24px;text-align: center;margin-left: 70px;background-color: #73CF42;background-color: #73CF42;">
+            {{place.result[0].rating?place.result[0].rating : 'null'}}</div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </div>
+  <div class="col-sm-6" style="margin-top: 10px;">
+
+    <agm-map style="height: 700px; width: 1030px;" [latitude]="33.7294" [longitude]="73.0931">
+      <div *ngFor="let place of parks ; let i = index">
+        <agm-marker [latitude]="place.result[0].geometry.location.lat?place.result[0].geometry.location : 'null'" [longitude]="place.result[0].geometry.location.lng?place.result[0].geometry.location : 'null'"></agm-marker>
+        <agm-direction *ngIf="dir" [origin]="dir.origin" [destination]="place.result[0].geometry.location?place.result[0].geometry.location : 'null'"></agm-direction>
+      </div>
+    </agm-map>
+
+    <div class="col-sm-1"></div>
+  </div>

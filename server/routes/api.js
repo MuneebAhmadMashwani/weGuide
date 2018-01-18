@@ -2,6 +2,8 @@ var express = require("express");
 var router = express.Router();
 var Places = require("../models/places");
 var Ratings = require("../models/ratings");
+var Hospitals = require("../models/hospitals");
+var Parks = require("../models/parks");
 
 router.get("/", function(req, res, next) {
   res.send("api works");
@@ -116,6 +118,27 @@ router.get("/places", function(req, res, next) {
     } else {
       console.log(_place);
       res.json(_place);
+    }
+  });
+});
+
+router.get("/hospitals", function(req, res, next) {
+  Hospitals.find({}, function(err, _hospitals) {
+    if (err) {
+      console.log("Error");
+    } else {
+      console.log(_hospitals);
+      res.json(_hospitals);
+    }
+  });
+});
+router.get("/parks", function(req, res, next) {
+  Parks.find({}, function(err, _parks) {
+    if (err) {
+      console.log("Error");
+    } else {
+      console.log(_parks);
+      res.json(_parks);
     }
   });
 });

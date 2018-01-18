@@ -13,12 +13,12 @@ import { concat } from "rxjs/operators/concat";
   templateUrl: "./map.component.html",
   styleUrls: ["./map.component.css"]
 })
-export class MapComponent implements OnInit, AfterViewInit {
+export class MapComponent implements OnInit {
   places = [];
   rating = [];
   review: string;
   mySearch: any;
-
+  dir: any;
   modalData: any;
 
   faoRating = 1;
@@ -29,19 +29,13 @@ export class MapComponent implements OnInit, AfterViewInit {
     private router: Router
   ) {}
 
-  ngAfterViewInit() {
-    // this._httpService
-    //   .getPlaces()
-    //   .map(resPlacesData => (this.places = resPlacesData));
-    // console.log("msla", this.places);
-    // this.places.sort();
-  }
   ngOnInit() {
     this.route.params.subscribe(data => {
       if (data.mySearch != "empty") {
         this.places = JSON.parse(data.mySearch);
-
-        if (!this.mySearch) {
+        console.log(this.places, data.mySearch, this.mySearch);
+        if (this.places.length == 0) {
+          alert("Such Place Does Not Exist");
           this.router.navigate([""]);
         }
       } else {
@@ -56,6 +50,11 @@ export class MapComponent implements OnInit, AfterViewInit {
         );
       }
     });
+
+    this.dir = {
+      origin: { lat: 33.6593, lng: 73.0238 },
+      destination: { lat: 33.6468, lng: 73.0376 }
+    };
   }
   setRating(place, event) {
     console.log(event);

@@ -4,26 +4,48 @@
 
     <div *ngIf="item.result[0].reviews?.length>4 && item.result[0].rating>4.5 && item.result[0].types?.length>6">
 
-        <div class="header-best" style="margin:100px auto;display:table;position:relative">
+        <div class="header-best" style="margin:90px auto;display:table;position:relative">
             <div>
                 <h1>Best Place: "{{item.result[0].name}}"</h1>
             </div>
         </div>
-        <div class="row"></div>
-        <div class="col-md-1"></div>
-        <div class="col-md-7">
-            <img style="height:600px" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference={{item.result[0].photos[0].photo_reference}}&key=AIzaSyBV_05tOiURUudZjXaiWdCxcMjkvD__fRk"
-                alt="empty">
-        </div>
-
-        <div class="col-md-3" style="border:ridge; Height:600px">
-            <div>
-                <h1 style="text-align:center">{{item.result[0].name}}</h1>
+        <div class="row" style="margin-top:-20px">
+            <div class="col-md-1"></div>
+            <div class="col-md-7">
+                <img style="height:600px" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference={{item.result[0].photos[0].photo_reference}}&key=AIzaSyBV_05tOiURUudZjXaiWdCxcMjkvD__fRk"
+                    alt="empty">
             </div>
 
+            <div class="col-md-3" style="border:ridge;margin-left:18px; Height:600px">
+                <div>
+                    <label>
+                        <h3>Name:</h3>
+                    </label>
+                    <h2 style="text-align:center;margin-top:0px">{{item.result[0].name}}</h2>
+                </div>
+                <div>
+                    <label>
+                        <h3>Address: </h3>
+                    </label>
+                    <h3 style="text-align:center">{{item.result[0].formatted_address}}</h3>
+                </div>
+                <div>
+                    <label>
+                        <h3>Phone Number: </h3>
+                    </label>
+                    <h2 style="text-align:center">{{item.result[0].formatted_phone_number}}</h2>
+                </div>
+                <div style="overflow:hidden">
+                    <label>
+                        <h3>Restaurant Type: </h3>
+                    </label>
+                    <h3 style="height:80px">{{item.result[0].types}}</h3>
+                </div>
+
+            </div>
+            <div class="col-md-1"></div>
+
+
         </div>
-        <div class="col-md-1"></div>
-
-
     </div>
 </div>

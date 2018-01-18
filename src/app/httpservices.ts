@@ -22,6 +22,17 @@ export class HttpService {
       .map((response: Response) => response.json());
   }
 
+  getHospitals(): Observable<any> {
+    return this._http
+      .get("http://localhost:3000/api/hospitals")
+      .map((response: Response) => response.json());
+  }
+  getParks(): Observable<any> {
+    return this._http
+      .get("http://localhost:3000/api/parks")
+      .map((response: Response) => response.json());
+  }
+
   setRating(_rating) {
     return this._http
       .post("http://localhost:3000/api/ratings", _rating)

@@ -1,6 +1,6 @@
-<h1 style="text-align:center;color:black;margin-top:170px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
+<h1 style="text-align:center;color:black;margin-top:90px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif">
 	New and Up-Coming Business </h1>
-<div class="business-page">
+<div class="business-page" style="margin-top:40px">
 	<div class="tab-content">
 
 		<div class="col-sm-2"></div>
@@ -15,24 +15,19 @@
 							 alt="There is no image" width="320px" height="300px" />
 						</div>
 						<div class="caption">
+							<ul style="list:none">
 
-							<h3>{{place.result[0].name}}</h3>
+								<h3 style="margin-top:-3px;padding-bottom:5px">{{place.result[0].name}}</h3>
 
-
+							</ul>
 
 						</div>
-						<div class="discription">
-							<h4 style="color:lightgrey">{{place.result[0].formatted_address}} </h4>
+						<div class="discription" style="margin-top:15px">
+							<p style="font-size:15px">{{place.result[0].formatted_address}} </p>
 						</div>
 
 						<div class="rating" style="background-color:grey">
-							<bar-rating [(rate)]="place.result[0].rating" [readOnly]="true" [theme]="'fontawesome-o'">
-							</bar-rating>
-
-							<!-- <star-rating-comp [starType]="'svg'" [rating]="2.63"></star-rating-comp> -->
-							<!-- <p-rating [(ngModel)]="val1" ngDefaultControl></p-rating> -->
-							<!-- <p-rating [ngModel]="5" readonly="true" stars="10" [cancel]="false"></p-rating> -->
-							<!-- <p-rating [(ngModel)]="val1" [cancel]="false" class="ui-state-default" ngDefaultControl>Works??</p-rating>  -->
+							<bar-rating [(rate)]="place.result[0].rating" [readOnly]="true" [theme]="'fontawesome-o'"> </bar-rating>
 
 						</div>
 					</div>
@@ -50,6 +45,8 @@
 	</div>
 
 </div>
-<div class="centered" style="margin:0 auto;width:50px;margin-top:365px">
-	<button class="btn btn-primary " (click)="kuchbhi()" type="button">More</button>
+<div class="centered" style="margin:0 auto;width:50px;margin-top:400px">
+	<a routerLink="/all-business">
+		<button type="button" (click)="businessBtn();" class="btn btn-primary">More</button>
+	</a>
 </div>

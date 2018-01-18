@@ -14,7 +14,9 @@ import { PagenotfoundComponent } from "./pagenotfound/pagenotfound.component";
 import { BestbarComponent } from "./Bestbar/component.bestbar";
 import { ProfileComponent } from "./component.profile";
 import { NearbyComponent } from "./NearbyPlaces/nearby.component";
-
+import { AllBusinessComponent } from "./all-business/all-business.component";
+import { HospitalsComponent } from "./hospitals/hospitals.component";
+import { ParksComponent } from "./parks/parks.component";
 export const routes: Routes = [
   {
     path: "",
@@ -33,10 +35,17 @@ export const routes: Routes = [
     path: "best",
     component: BestComponent
   },
-
+  {
+    path: "app-parks",
+    component: ParksComponent
+  },
   {
     path: "best-hotel",
     component: BesthotelComponent
+  },
+  {
+    path: "app-hospitals",
+    component: HospitalsComponent
   },
   {
     path: "best-place",
@@ -57,6 +66,10 @@ export const routes: Routes = [
   {
     path: "nearby",
     component: NearbyComponent
+  },
+  {
+    path: "all-business",
+    component: AllBusinessComponent
   }
 ];
 
@@ -72,5 +85,6 @@ export const routingComponents = [
   MapComponent,
   BestComponent,
   FooterComponent,
-  PagenotfoundComponent
+  PagenotfoundComponent,
+  AllBusinessComponent
 ];

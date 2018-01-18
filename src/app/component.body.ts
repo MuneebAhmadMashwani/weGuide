@@ -111,9 +111,6 @@ export class BodyComponent implements OnInit {
 
   //////////////////////////////////////////////////////
   btnSearch = function() {
-    var find = {
-      _find: "empty"
-    };
     var _find = {
       _find: this.camelize(this._find)
     };
@@ -125,7 +122,7 @@ export class BodyComponent implements OnInit {
 
         this.router.navigate(["/map", { mySearch: resSearch._body }]);
       } else {
-        this.router.navigate(["/map", { mySearch: "empty" }]);
+        alert("fields cant be empty");
         console.log("User hasn't typed anything");
       }
     });
@@ -133,7 +130,7 @@ export class BodyComponent implements OnInit {
 
   //////////////////////////////////////////////////////////
   getLocation() {
-    this.router.navigate(["/nearby", { nearby: "restaurant" }]);
+    this.router.navigate(["/map", { mySearch: "empty" }]);
   }
 
   //Show Menu on clicking on Input searchbar

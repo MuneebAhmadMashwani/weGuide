@@ -8,6 +8,7 @@ import { AgmCoreModule } from "@agm/core";
 import { AppComponent } from "./app.component";
 import { ButtonModule, RatingModule } from "primeng/primeng";
 
+import { AgmDirectionModule } from "agm-direction";
 import { AutoCompleteModule } from "primeng/primeng";
 
 import { NavbarComponent } from "./component.navbar";
@@ -31,6 +32,10 @@ import * as $ from "jquery";
 import { BarRatingModule } from "ngx-bar-rating";
 import { AddPlaceComponent } from "./add-place/add-place.component";
 
+import { AllBusinessComponent } from "./all-business/all-business.component";
+import { HospitalsComponent } from './hospitals/hospitals.component';
+import { ParksComponent } from './parks/parks.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,23 +53,26 @@ import { AddPlaceComponent } from "./add-place/add-place.component";
     PagenotfoundComponent,
     ProfileComponent,
     NearbyComponent,
-    AddPlaceComponent
+    AllBusinessComponent,
+    HospitalsComponent,
+    ParksComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     AppRoutingModule,
+
     FormsModule,
     ButtonModule,
     RatingModule,
-
     AutoCompleteModule,
     RouterModule,
     BarRatingModule,
 
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyCXDqAJTro0We2QFN6jH3zwbFMndDMomTI"
-    })
+    }),
+    AgmDirectionModule
   ],
   providers: [HttpService],
 

@@ -1,5 +1,5 @@
 .footer {
-  margin-top: 100%;
+  margin-top: 100px;
   margin-bottom: 0px;
   background: black;
   height: 280px;
@@ -12,7 +12,11 @@
 .p {
   color: whitesmoke;
 }
-
+.logo-company {
+  background-image: url("../../image/w1.png");
+  opacity: 1;
+  background-repeat: no-repeat;
+}
 .col-md-3 {
   color: #ffffff;
   padding: 0;

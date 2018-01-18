@@ -14,8 +14,8 @@
       </h1>
       <div col-md-12>
         <div class="row" style="width:100%">
-          <div class="col-md-4"></div>
-          <div class="col-md-4">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
             <h1 style="margin:0; text-align:center;position:relative;padding-bottom:5px">
               <span class="typewriter">Find the Best Place to</span>
               <a class="typewrite" data-period="2000" data-type='["Eat", "Drink", "Stay","Visit." ]'>
@@ -24,289 +24,92 @@
               </a>
             </h1>
           </div>
-          <div class="col-md-4"></div>
+          <div class="col-md-3"></div>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-sm-12">
-    <form>
-      <div class="row" style="width:100%">
+  <div class="row" style="width:100%;height:60px;">
+    <form #f="ngForm" (ngSubmit)="btnSearch()">
 
-        <div class="col-sm-3"></div>
-        <div class="col-sm-3">
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
 
-          <div class="container-search-1" style="width:100%;float:right;right:30px">
-            <div class="pseudo-input_field-holder" style=" border:ridge;border-style:hidden">
-              <span class="pseudo-input_field-holder-find" style="padding-left:15px">Find : </span>
-
-              <!-- <input #myInput placeholder="Item name..." [(ngModel)]="name" (input)="filterItem(myInput.value)">
-           
-              <div style="background-color:blue" id="itemss" *ngFor="let item of filteredItems">
-                {{item.result.name}}
-              </div>
-             -->
-
-              <input autocomplete="on" id="droppp" maxlength="64" name="find_desc" (click)="khuljasimsim();" placeholder="Restaurant, Resort or Hotel"
-                value="" list="dropdown" [(ngModel)]="_find" class="pseudo-input_field business-search-form_input-field " aria-autocomplete="list"
-                tabindex="1" style="display:inline-block;border-color:transparent;padding-left:20px;height:44px;padding-bottom:0px;padding-top:0px">
-              <datalist id="dropdown">
-                <option id="listElements" *ngFor="let place of places let i = index " value="{{place.result.name}}"></option>
-
-              </datalist>
-
-              <!-- <ul style="z-index:1; list-style:none; height: 200px; width:412px; display:none" id="displaylist" class="ui-menu">
+        <div class="container-search-1" style="float:right;left:15px;position:relative;width:100%;">
+          <div class="pseudo-input_field-holder" style=" border:ridge;border-style:hidden">
+            <!-- <span class="pseudo-input_field-holder-find" style="padding-left:10px;">Find : </span> -->
+            <div class="pseudo-input_field-holder-find" type="text" style="border:none;display:inline-block;position:relative;padding-left:40px;margin-top:10px">Find : </div>
 
 
-              <li style="height:47px">
-                <div class="row">
-                  <div class="col-md-2">
-                    <img height="30px" width="30px" src="https://d30y9cdsu7xlg0.cloudfront.net/png/6564-200.png" />
-                  </div>
+            <input autocomplete="on" id="droppp" maxlength="64" name="find_desc" (click)="khuljasimsim();" placeholder="Restaurant, Resort or Hotel"
+              value="" list="dropdown" [(ngModel)]="_find" class="pseudo-input_field business-search-form_input-field " aria-autocomplete="list"
+              tabindex="1" style="border-color:transparent;height:44px;padding-bottom:0px;padding-top:0px;width:75%" required>
+            <datalist id="dropdown">
+              <option id="listElements" *ngFor="let place of places let i = index " value="{{place.result.name}}"></option>
 
-                  <div class="col-md-10">Restaurant</div>
-                </div>
-              </li> -->
+            </datalist>
 
-
-              <!-- <li style="height:47px">
-                <div class="row">
-                  <div class="col-md-2">
-                    <img height="30px" width="30px" src="https://d30y9cdsu7xlg0.cloudfront.net/png/6564-200.png" />
-                  </div>
-
-                  <div class="col-md-10">Hotel</div>
-                </div>
-
-              </li>
-
-              <li style="height:47px">
-                <div class="row">
-                  <div class="col-md-2">
-                    <img height="30px" width="30px" src="https://d30y9cdsu7xlg0.cloudfront.net/png/6564-200.png" />
-                  </div>
-
-                  <div class="col-md-10">Visit</div>
-                </div>
-              </li>
-
-              <li style="height:47px">
-
-                <div class="row">
-                  <div class="col-md-2">
-                    <img height="30px" width="30px" src="https://d30y9cdsu7xlg0.cloudfront.net/png/6564-200.png" />
-                  </div>
-
-                  <div class="col-md-10">Stay</div>
-                </div>
-
-
-              </li> -->
-
-              <!-- </ul> -->
-
-
-              <!-- <datalist materialize="material_select" [materializeSelectOptions]="list" [(ngModel)]="model">
-              <option value="" data-icon="../image/msdropdown/icons/browser-chrome.png" class="left circle">example 1</option>
-
-            </datalist> -->
-              <!-- <div class="Row">
-              <div class="col-md-3"></div>
-              <div class="col-md-9">
-                <ul id="droppp" class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all noSidebar groupedAutocomplete headerBarSearch"
-                  role="listbox" aria-activedescendant="ui-active-menuitem" style="display:none; z-index: 1000001; top: -319px; left: 287px;  position: relative;">
-                  <li class="sectionLevel1 ui-menu-item" role="menuitem">
-                    <div class="sectionLevel2">
-                      <ul class="sectionItems">
-                        <li class="ui-autocomplete-element">
-                          <a>
-                            <div class="unifiedQueryComplete">
-                              <div class="autocompleteIconWrapper">
-                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_toppicks_20170920.png" alt="Top Picks">
-                              </div>
-                              <div class="autocompleteDetailsWrapper">
-                                <div class="autocompleteText">Top Picks</div>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                        <li class="ui-autocomplete-element">
-                          <a>
-                            <div class="unifiedQueryComplete">
-                              <div class="autocompleteIconWrapper">
-                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_trendingthismonth_20170920.png" alt="Trending">
-                              </div>
-                              <div class="autocompleteDetailsWrapper">
-                                <div class="autocompleteText">Trending</div>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                        <li class="ui-autocomplete-element">
-                          <a>
-                            <div class="unifiedQueryComplete">
-                              <div class="autocompleteIconWrapper">
-                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_food_20170920.png" alt="Food">
-                              </div>
-                              <div class="autocompleteDetailsWrapper">
-                                <div class="autocompleteText">Food</div>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                        <li class="ui-autocomplete-element">
-                          <a>
-                            <div class="unifiedQueryComplete">
-                              <div class="autocompleteIconWrapper">
-                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_coffee_20170920.png" alt="Coffee">
-                              </div>
-                              <div class="autocompleteDetailsWrapper">
-                                <div class="autocompleteText">Coffee</div>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                        <li class="ui-autocomplete-element">
-                          <a>
-                            <div class="unifiedQueryComplete">
-                              <div class="autocompleteIconWrapper">
-                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_drinks_20170920.png" alt="Nightlife">
-                              </div>
-                              <div class="autocompleteDetailsWrapper">
-                                <div class="autocompleteText">Nightlife</div>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                        <li class="ui-autocomplete-element">
-                          <a>
-                            <div class="unifiedQueryComplete">
-                              <div class="autocompleteIconWrapper">
-                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_fun_20170920.png" alt="Fun">
-                              </div>
-                              <div class="autocompleteDetailsWrapper">
-                                <div class="autocompleteText">Fun</div>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                        <li class="ui-autocomplete-element">
-                          <a>
-                            <div class="unifiedQueryComplete">
-                              <div class="autocompleteIconWrapper">
-                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_shopping_20170920.png" alt="Shopping">
-                              </div>
-                              <div class="autocompleteDetailsWrapper">
-                                <div class="autocompleteText">Shopping</div>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                        <li class="ui-autocomplete-element">
-                          <a>
-                            <div class="unifiedQueryComplete">
-                              <div class="autocompleteIconWrapper">
-                                <img src="https://irs1.4sqi.net/img/general/cap/120/dialpad_breakfast_20170920.png" alt="Breakfast">
-                              </div>
-                              <div class="autocompleteDetailsWrapper">
-                                <div class="autocompleteText">Breakfast</div>
-                              </div>
-                            </div>
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div> -->
-              <!--  <datalist id="dropdown" style="font-family:FontAwesome, sans-serif;">
-              <option value="0" selected> &#xf201; Chart</option>
-              <option value="fa-500px">&#xf26e; 500px</option>
-              <option class="fa fa-cutlery">&#xf05e; Blocker</option>
-            </datalist> -->
-              <!-- <select style="width:200px" class="tech" name="tech" id="tech" onchange="showValue(this)">
-              <option value="calendar" data-image="images/msdropdown/icons/icon_calendar.gif">Calendar</option>
-              <option value="shopping_cart" data-image="images/msdropdown/icons/icon_cart.gif">Shopping Cart</option>
-              <option value="cd" data-image="images/msdropdown/icons/icon_cd.gif" name="cd">CD</option>
-              <option value="email" data-image="images/msdropdown/icons/icon_email.gif">Email</option>
-              <option value="faq" data-image="images/msdropdown/icons/icon_faq.gif">FAQ</option>
-              <option value="games" data-image="images/msdropdown/icons/icon_games.gif">Games</option>
-              <option value="music" data-image="images/msdropdown/icons/icon_music.gif">Music</option>
-              <option value="phone" data-image="images/msdropdown/icons/icon_phone.gif">Phone</option>
-              <option value="graph" data-image="images/msdropdown/icons/icon_sales.gif">Graph</option>
-              <option value="secured" data-image="images/msdropdown/icons/icon_secure.gif">Secured</option>
-              <option value="video" data-image="images/msdropdown/icons/icon_video.gif">Video</option>
-              <option value="cd" data-image="images/msdropdown/icons/icon_cd.gif" name="cd">CD</option>
-            </select> -->
-
-              <!-- <div id="search-box-div">
-                <div id="search-field" class="top-div">
-                  <input #input type="text" placeholder="Filter">
-                </div>
-              </div>
-              <ul>
-                
-                <li *ngFor="let operation of places">
-                  <label>{{operation.result.name}}</label>
-                </li>
-              </ul>-->
-
-
-              <div class="divider" style="float:right;right:-.5%;"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-3">
-          <div class="container-search-2" style="float:left; width:100%">
-            <div class="pseudo-input_field-holder-place" style="padding-left:25px;">
-              <div class="pseudo-input_field-holder-place_area" type="text" style="border:none;display:inline-block;position:relative">Near : </div>
-
-              <input autocomplete="off" id="find_desc" maxlength="50" name="find_desc" placeholder="City, Area or Sector" value="" class="pseudo-input_field business-search-form_input-field"
-                aria-autocomplete="list" tabindex="1" style="padding-left:20px;position:relative;height:44px;width:200px;border:rigid;border: 0px none;">
-            </div>
           </div>
 
         </div>
-
-        <div class="col-sm-3">
-          <div search-button style="padding-top:45px; float:left;">
-            <button type="submit" id="btn-search" class="glyphicon glyphicon-search" (click)="btnSearch();" style="float:left;left:-15px"></button>
-          </div>
-        </div>
-
-
 
       </div>
+      <div class="col-md-4">
+        <div class="divider" style="float:left;right:15px;color:black"></div>
+
+        <div class="container-search-2" style="float:left;margin-left:-20px; width:100%">
+          <div class="pseudo-input_field-holder-place" style="padding-left:25px;">
+            <div class="pseudo-input_field-holder-place_area" type="text" style="border:none;display:inline-block;position:relative">Near : </div>
+
+            <input autocomplete="off" id="city" maxlength="50" name="city" placeholder="City, Area or Sector" value="Islamabad" class="pseudo-input_field business-search-form_input-field"
+              aria-autocomplete="list" tabindex="1" style="background:transparent;padding-left:20px;position:relative;height:44px;width:200px;border:rigid;border: 0px none;"
+              disabled>
+          </div>
+          <!-- <div> <span id="city"></span></div> -->
+
+        </div>
+
+      </div>
+
+      <div class="col-md-2">
+        <div search-button style="padding-top:45px; float:left;margin-left:-35px">
+          <button type="submit" id="btn-search" class="glyphicon glyphicon-search" [disabled]="!f.valid" style="float:left;left:-15px"></button>
+        </div>
+      </div>
+
+
     </form>
+
   </div>
+</div>
 
 
-  <div class="row" style="width:100%;padding-top:0px;">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
-      <div class="panel-icons" style="width:450px;height:83px;margin:0 auto">
+<div class="row" style="width:100%;margin-top:-130px;">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="panel-icons" style="width:450px;height:83px;margin:0 auto">
 
-        <div class="inner">
-          <button (click)="getLocation()" class="fa fa-cutlery" aria-hidden="true" style="border:rigid;background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Eat</button>
-        </div>
-
-
-        <div class="inner">
-          <button class="fa fa-glass" aria-hidden="true" style="background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Drink</button>
-        </div>
-
-        <div class="inner">
-          <button class="fa fa-bed" aria-hidden="true" style="background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Stay</button>
-        </div>
-
-        <div class="inner">
-          <button class="fa fa-road" aria-hidden="true" style="background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Visit</button>
-        </div>
+      <div class="inner">
+        <button (click)="getLocation()" class="fa fa-cutlery" aria-hidden="true" style="border:rigid;background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Restaurants</button>
       </div>
 
+
+      <div class="inner">
+        <a routerLink="/app-hospitals">
+          <button class="fa fa-heartbeat" aria-hidden="true" style="background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Hospital</button>
+        </a>
+      </div>
+
+      <div class="inner">
+        <a routerLink="/app-parks">
+          <button class="fa fa-tree" aria-hidden="true" style="background:transparent;color:white;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px">Misc</button>
+        </a>
+      </div>
+
+
     </div>
-    <div class="col-sm-4"></div>
+
   </div>
-  <business></business>
+  <div class="col-md-3"></div>
 </div>
+<business></business>
