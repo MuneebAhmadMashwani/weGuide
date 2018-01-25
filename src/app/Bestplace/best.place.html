@@ -1,31 +1,50 @@
-<navbar></navbar>
-<div class="header-best" style="margin:0 auto;display:table;position:relative">
-    <div class="text-best">
-        <h1 style="padding-top:75px;text-align:center;">Best Place of Month in your City</h1>
-    </div>
+<navbar style="background-color:rgb(125, 151, 124)"></navbar>
 
-    <div class="best-of-month-with-address" style="padding-top:23px;height:475px">
-        <div class="main-image-best" style='width:960px; height:450px'>
+<div *ngFor="let item of places let i=index;">
 
-            <div class="adress-best"></div>
+    <div *ngIf="item.result[0].reviews?.length>4 &&item.result[0].rating>4.5  ">
+
+        <div class="header-best" style="margin:90px auto;display:table;position:relative">
+            <div>
+                <h1>Best Hospital: "{{item.result[0].name}}"</h1>
+            </div>
         </div>
-    </div>
+        <div class="row" style="margin-top:-20px">
+            <div class="col-md-1"></div>
+            <div class="col-md-7">
+                <img style="height:600px" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference={{item.result[0].photos[0].photo_reference}}&key=AIzaSyCYnS_IHSuJdOnZuCxUjAibFi7F6Yp1D38"
+                    alt="empty">
+            </div>
 
+            <div class="col-md-3" style="border:ridge;margin-left:18px; Height:600px">
+                <div>
+                    <label>
+                        <h3>Name:</h3>
+                    </label>
+                    <h2 style="text-align:center;margin-top:0px">{{item.result[0].name}}</h2>
+                </div>
+                <div>
+                    <label>
+                        <h3>Address: </h3>
+                    </label>
+                    <h3 style="text-align:center">{{item.result[0].formatted_address}}</h3>
+                </div>
+                <div>
+                    <label>
+                        <h3>Phone Number: </h3>
+                    </label>
+                    <h2 style="text-align:center">{{item.result[0].formatted_phone_number}}</h2>
+                </div>
+                <div style="overflow:hidden">
+                    <label>
+                        <h3>Restaurant Type: </h3>
+                    </label>
+                    <h3 style="height:80px">{{item.result[0].types}}</h3>
+                </div>
 
-    <div class="centered" style="position:relative;">
-        <div class="container" style="padding-top:50px;display:-webkit-inline-flex;width:2000px;margin-left:-200px">
-            <div class="best-in-ratings"></div>
+            </div>
+            <div class="col-md-1"></div>
 
-            <div class="type-of-Restaurant"></div>
-
-            <div class="fine-Cusine-in-low-Budget"></div>
-        </div>
-
-
-        <div class="container" style="padding-top:50px;display:-webkit-inline-flex;width:2000px;margin-left:-200px">
-            <div class="discription1">a</div>
-            <div class="discription1" style="margin-left: 50px;">b</div>
-            <div class="discription1" style="margin-left: 50px;">c</div>
 
         </div>
     </div>

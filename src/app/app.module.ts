@@ -18,7 +18,6 @@ import { homeComponent } from "./component.home";
 import { BestComponent } from "./Bestrestaurant/component.best";
 import { MapComponent } from "./map/map.component";
 import { CompanyComponent } from "./component.company";
-import { NearbyComponent } from "./NearbyPlaces/nearby.component";
 
 import { BesthotelComponent } from "./Besthotel/component.besthotel";
 import { BestplaceComponent } from "./Bestplace/component.bestplace";
@@ -30,11 +29,10 @@ import { HttpService } from "./httpservices";
 
 import * as $ from "jquery";
 import { BarRatingModule } from "ngx-bar-rating";
-import { AddPlaceComponent } from "./add-place/add-place.component";
 
 import { AllBusinessComponent } from "./all-business/all-business.component";
-import { HospitalsComponent } from './hospitals/hospitals.component';
-import { ParksComponent } from './parks/parks.component';
+import { HospitalsComponent } from "./hospitals/hospitals.component";
+import { ParksComponent } from "./parks/parks.component";
 
 @NgModule({
   declarations: [
@@ -52,7 +50,7 @@ import { ParksComponent } from './parks/parks.component';
     FooterComponent,
     PagenotfoundComponent,
     ProfileComponent,
-    NearbyComponent,
+
     AllBusinessComponent,
     HospitalsComponent,
     ParksComponent

@@ -13,7 +13,6 @@ import { BestplaceComponent } from "./Bestplace/component.bestplace";
 import { PagenotfoundComponent } from "./pagenotfound/pagenotfound.component";
 import { BestbarComponent } from "./Bestbar/component.bestbar";
 import { ProfileComponent } from "./component.profile";
-import { NearbyComponent } from "./NearbyPlaces/nearby.component";
 import { AllBusinessComponent } from "./all-business/all-business.component";
 import { HospitalsComponent } from "./hospitals/hospitals.component";
 import { ParksComponent } from "./parks/parks.component";
@@ -62,10 +61,6 @@ export const routes: Routes = [
   {
     path: "profile",
     component: ProfileComponent
-  },
-  {
-    path: "nearby",
-    component: NearbyComponent
   },
   {
     path: "all-business",
